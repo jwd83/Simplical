@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="16sp"
+    android:paddingRight="16sp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:autofillHints=""
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/screenBackground"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/acquainted"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/colorFontDefault" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionPreface"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorFontDefault" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionSex"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorFontDefault" />
+
+        <RadioGroup
+            android:id="@+id/radio_sex"
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sexMale"
+                android:textColor="@color/colorFontDefault" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sexFemale"
+                android:textColor="@color/colorFontDefault" />
+
+        </RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionBirthDate"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorFontDefault" />
+
+        <EditText
+            android:id="@+id/edit_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="@color/colorFontDefault"
+            android:autofillHints="yes"
+            android:hint="@string/hintBirthDate"
+            android:textColorHint="@color/colorFontHint"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionHeight"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorFontDefault" />
+
+        <EditText
+            android:id="@+id/edit_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="@color/colorFontDefault"
+            android:hint="@string/hintHeight"
+            android:textColorHint="@color/colorFontHint"
+            android:importantForAutofill="no" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionWeight"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorFontDefault" />
+
+        <EditText
+            android:id="@+id/edit_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="@color/colorFontDefault"
+            android:hint="@string/hintWeight"
+            android:textColorHint="@color/colorFontHint"
+            android:importantForAutofill="no" />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/buttonLooksGood" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Simplical</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="greeting">It\'s time to get healthy,\nare you ready?</string>
+    <string name="next">Let\'s Go!</string>
+
+    <!-- Q&A -->
+    <string name="previous">Previous</string>
+    <string name="acquainted">Getting to Know You</string>
+    <string name="questionPreface">Answer a few questions so I can start painting a picture of your health.</string>
+    <string name="questionSex">Which sex are you?</string>
+    <string name="questionBirthDate">What is your date of birth?</string>
+    <string name="hintBirthDate">12/31/1995</string>
+    <string name="sexMale">Male</string>
+    <string name="sexFemale">Female</string>
+    <string name="questionHeight">Your height in inches?</string>
+    <string name="hintHeight">72.5</string>
+    <string name="questionWeight">How many pounds do you weigh?</string>
+    <string name="hintWeight">204.6</string>
+    <string name="buttonLooksGood">Looks good!</string>
+
+    <string name="hello_first_fragment">Welcome to Simplical</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
