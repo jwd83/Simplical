@@ -68,7 +68,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sexFemale"
                 android:textColor="@color/colorFontDefault" />
-
         </RadioGroup>
 
         <Space
@@ -140,6 +139,66 @@
             android:textColorHint="@color/colorFontHint"
             android:importantForAutofill="no" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
+            android:id="@+id/text_activity_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionActivityLevel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorFontDefault" />
+
+        <RadioGroup
+            android:id="@+id/radio_activity_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radio_al_110"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al110"
+                android:textColor="@color/colorFontDefault"
+                />
+            <RadioButton
+                android:id="@+id/radio_al_120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al120"
+                android:textColor="@color/colorFontDefault"
+                />
+            <RadioButton
+                android:id="@+id/radio_al_137"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al137"
+                android:textColor="@color/colorFontDefault"
+                />
+            <RadioButton
+                android:id="@+id/radio_al_155"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al155"
+                android:textColor="@color/colorFontDefault"
+                />
+            <RadioButton
+                android:id="@+id/radio_al_173"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al173"
+                android:textColor="@color/colorFontDefault"
+                />
+            <RadioButton
+                android:id="@+id/radio_al_190"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/al190"
+                android:textColor="@color/colorFontDefault"
+                />
+        </RadioGroup>
 
         <Space
             android:layout_width="match_parent"

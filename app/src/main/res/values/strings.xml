@@ -20,6 +20,13 @@
     <string name="hintHeight">72.5</string>
     <string name="questionWeight">How many pounds do you weigh?</string>
     <string name="hintWeight">204.6</string>
+    <string name="questionActivityLevel">How active are you?</string>
+    <string name="al110">Spend most of day sitting, no exercise</string>
+    <string name="al120">Spend most of day sitting, very little exercise</string>
+    <string name="al137">Slightly active and light exercise 1–3 days per week</string>
+    <string name="al155">Moderately active and moderate exercise 3–5 days per week</string>
+    <string name="al173">Very active with hard exercise 6–7 days per week</string>
+    <string name="al190">Extremely active, physically demanding job, insane workout routines</string>
     <string name="buttonLooksGood">Looks good!</string>
 
     <string name="hello_first_fragment">Welcome to Simplical</string>
