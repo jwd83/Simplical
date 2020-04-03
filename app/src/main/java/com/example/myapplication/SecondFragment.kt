@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_second.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -19,13 +21,25 @@ class SecondFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        button_looks_good.setOnClickListener {
+            Toast.makeText(context, "Please review your information", Toast.LENGTH_LONG).show()
+        }
 
+//
+//        view.findViewById<Button>(R.id.button_looks_good).setOnClickListener{
+//            Toast.makeText(context, "Please review your information", Toast.LENGTH_LONG).show()
+//
+//        }
+//
 //        view.findViewById<Button>(R.id.button_second).setOnClickListener {
 //            // findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
 //        }
+
+
     }
 }

@@ -16,7 +16,7 @@
         >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/text_getting_to_know"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -30,7 +30,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/text_please_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionPreface"
@@ -43,7 +43,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/text_sex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionSex"
@@ -56,14 +56,14 @@
             android:layout_height="64dp">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radio_male"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sexMale"
                 android:textColor="@color/colorFontDefault" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radio_female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sexFemale"
@@ -76,7 +76,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/text_date_of_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionBirthDate"
@@ -99,7 +99,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/text_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionHeight"
@@ -122,7 +122,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/text_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionWeight"
@@ -146,7 +146,7 @@
             android:layout_height="30sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_looks_good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"

@@ -5,8 +5,10 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_second.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+//        button_looks_good.setOnClickListener {
+//            Toast.makeText(this, "Please review your information", Toast.LENGTH_LONG).show()
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
