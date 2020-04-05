@@ -23,43 +23,37 @@ class SecondFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
         button_looks_good.setOnClickListener {
 
-            val weight_empty = edit_weight.text.toString().isEmpty()
-            val height_empty = edit_height.text.toString().isEmpty()
+            var success = false
 
-            if(weight_empty || height_empty) {
-                Toast.makeText(context, "Please respond to all questions above", Toast.LENGTH_LONG).show()
-            } else {
-
+            try {
                 val weight = edit_weight.text.toString().toDouble()
                 val height = edit_height.text.toString().toDouble()
                 val age = 37
-
                 if(height > 24 && height < 108 && weight > 50 && weight < 3000) {
+                    // solve bmi/bmr values
                     val bmi = 703.0717 * (weight / (height*height))
                     val maleBmr = (66 + (6.2 * weight) + (12.7 * height) - (6.76 * age))
                     val femaleBmr = (655.1 + 4.35 * weight + 4.7 * height - 4.7 * age)
-                    Toast.makeText(context, ("BMI = %.2f\nmBMR = %.2f\n" +
-                            "fBMR = %.2f").format(bmi, maleBmr, femaleBmr), Toast.LENGTH_LONG).show()
+
+                    // generate a toast message
+                    Toast.makeText(
+                        context,
+                        ("BMI = %.2f\nmBMR = %.2f\n" + "fBMR = %.2f").format(bmi, maleBmr, femaleBmr),
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                    success = true
                 }
+            } catch(e: Throwable) {
+
             }
-
-
-
+            if (!success) {
+                Toast.makeText(context, "Please respond to all questions above", Toast.LENGTH_LONG).show()
+            }
         }
-
-//
-//        view.findViewById<Button>(R.id.button_looks_good).setOnClickListener{
-//            Toast.makeText(context, "Please review your information", Toast.LENGTH_LONG).show()
-//
-//        }
-//
-//        view.findViewById<Button>(R.id.button_second).setOnClickListener {
-//            // findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
-
-
     }
 }
