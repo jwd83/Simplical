@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_second.*
 
 /**
@@ -56,6 +57,8 @@ class SecondFragment : Fragment() {
                         ("BMI = %.2f\nBMR = %.2f").format(bmi, bmr),
                         Toast.LENGTH_LONG
                     ).show()
+
+                    findNavController().navigate(R.id.action_SecondFragment_to_MainFragment)
 
                     success = true
                 }
