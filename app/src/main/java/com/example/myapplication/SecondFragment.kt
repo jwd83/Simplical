@@ -30,19 +30,30 @@ class SecondFragment : Fragment() {
             var success = false
 
             try {
+                val sexIsMale = when (radio_sex.checkedRadioButtonId) {
+                    R.id.radio_male -> true
+                    R.id.radio_female -> false
+                    else -> throw IllegalArgumentException("Sex required")
+                }
+
                 val weight = edit_weight.text.toString().toDouble()
                 val height = edit_height.text.toString().toDouble()
+                val birthDate = edit_birth.text.toString()
+
                 val age = 37
-                if(height > 24 && height < 108 && weight > 50 && weight < 3000) {
+                if(height >= 48 && height < 108 && weight > 50 && weight < 3000) {
                     // solve bmi/bmr values
                     val bmi = 703.0717 * (weight / (height*height))
-                    val maleBmr = (66 + (6.2 * weight) + (12.7 * height) - (6.76 * age))
-                    val femaleBmr = (655.1 + 4.35 * weight + 4.7 * height - 4.7 * age)
+                    val bmr = if(sexIsMale) {
+                        (66 + (6.2 * weight) + (12.7 * height) - (6.76 * age))
+                    } else {
+                        (655.1 + 4.35 * weight + 4.7 * height - 4.7 * age)
+                    }
 
                     // generate a toast message
                     Toast.makeText(
                         context,
-                        ("BMI = %.2f\nmBMR = %.2f\n" + "fBMR = %.2f").format(bmi, maleBmr, femaleBmr),
+                        ("BMI = %.2f\nBMR = %.2f").format(bmi, bmr),
                         Toast.LENGTH_LONG
                     ).show()
 

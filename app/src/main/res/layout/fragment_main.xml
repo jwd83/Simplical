@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="16sp"
+    android:paddingRight="16sp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:autofillHints=""
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/screenBackground"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/text_calories_remaining"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="70sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/text_calories_remaining_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/caloriesRemaining"
+
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/text_current_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="70sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/text_current_weight_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/currentWeight"
+
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20sp" />
+
+        <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Calories"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Weight"
+         />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Extra Exercise"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Details"
+       />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Goal Weight"
+         />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

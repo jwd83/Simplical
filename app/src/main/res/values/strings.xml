@@ -29,6 +29,15 @@
     <string name="al190">Extremely active, physically demanding job, insane workout routines</string>
     <string name="buttonLooksGood">Looks good!</string>
 
+    <!-- Main Menu -->
+    <string name="caloriesRemaining">Calories Remaining Today</string>
+    <string name="currentWeight">Current Weight</string>
+
+
+
     <string name="hello_first_fragment">Welcome to Simplical</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
