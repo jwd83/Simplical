@@ -1,24 +1,29 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_second.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val prefs = getSharedPreferences(Info.spFilename, Context.MODE_PRIVATE)
+
+        Info.height = prefs.getDouble(Info.spKeyHeight, 0.0)
+        Info.weight = prefs.getDouble(Info.spKeyWeight, 0.0)
+        Info.activityLevel = prefs.getDouble(Info.spKeyActivityLevel, 0.0)
+        Info.birthDate = prefs.getString(Info.spKeyBirthDate, "")
+        Info.male = prefs.getBoolean(Info.spKeyMale, false)
+        Info.rate = prefs.getDouble(Info.spKeyRate, 0.0)
+
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-//        button_looks_good.setOnClickListener {
-//            Toast.makeText(this, "Please review your information", Toast.LENGTH_LONG).show()
-//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

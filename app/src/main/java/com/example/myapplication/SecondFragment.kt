@@ -37,24 +37,45 @@ class SecondFragment : Fragment() {
                     else -> throw IllegalArgumentException("Sex required")
                 }
 
+                val activityLevel = when(radio_activity_level.checkedRadioButtonId) {
+                    R.id.radio_al_110 -> 1.1
+                    R.id.radio_al_120 -> 1.2
+                    R.id.radio_al_137 -> 1.37
+                    R.id.radio_al_155 -> 1.55
+                    R.id.radio_al_1725 -> 1.725
+                    R.id.radio_al_190 -> 1.9
+                    else -> throw IllegalArgumentException("Activity level required")
+                }
+
                 val weight = edit_weight.text.toString().toDouble()
                 val height = edit_height.text.toString().toDouble()
                 val birthDate = edit_birth.text.toString()
+                val age = 37.0
+                val rate = when(radio_rate.checkedRadioButtonId) {
+                    R.id.rate_05 -> 0.5
+                    R.id.rate_10 -> 1.0
+                    R.id.rate_15 -> 1.5
+                    R.id.rate_20 -> 2.0
+                    else -> throw IllegalArgumentException("Rate of change required")
+                }
 
-                val age = 37
-                if(height >= 48 && height < 108 && weight > 50 && weight < 3000) {
+                if(height in 48.0..108.0 && weight in 50.0..600.0) {
+
+                    Info.weight = weight
+                    Info.height = height
+                    Info.male = sexIsMale
+                    Info.age = age
+                    Info.activityLevel = activityLevel
+
                     // solve bmi/bmr values
-                    val bmi = 703.0717 * (weight / (height*height))
-                    val bmr = if(sexIsMale) {
-                        (66 + (6.2 * weight) + (12.7 * height) - (6.76 * age))
-                    } else {
-                        (655.1 + 4.35 * weight + 4.7 * height - 4.7 * age)
-                    }
+                    val bmi = Info.calculateBMI()
+                    val bmr = Info.calculateBMR()
+                    val tdee = Info.calculateTDEE()
 
                     // generate a toast message
                     Toast.makeText(
                         context,
-                        ("BMI = %.2f\nBMR = %.2f").format(bmi, bmr),
+                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f").format(bmi, bmr, tdee),
                         Toast.LENGTH_LONG
                     ).show()
 

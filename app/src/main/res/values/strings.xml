@@ -27,6 +27,12 @@
     <string name="al155">Moderately active and moderate exercise 3–5 days per week</string>
     <string name="al173">Very active with hard exercise 6–7 days per week</string>
     <string name="al190">Extremely active, physically demanding job, insane workout routines</string>
+    <string name="questionWeightLossPacing">Desired rate of weight change</string>
+    <string name="pace0Lb">0 pound a week (maintain)</string>
+    <string name="pace05Lb">0.5 pound a week (slow)</string>
+    <string name="pace1Lb">1 pound a week (moderate)</string>
+    <string name="pace15Lb">1.5 pounds a week (fast)</string>
+    <string name="pace2Lb">2 pounds a week (very fast!)</string>
     <string name="buttonLooksGood">Looks good!</string>
 
     <!-- Main Menu -->

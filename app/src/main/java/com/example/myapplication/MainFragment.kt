@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         button_update_details.setOnClickListener{
-            findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
+//            findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
 
         }
     }
