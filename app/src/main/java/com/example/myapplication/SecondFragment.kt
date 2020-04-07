@@ -1,11 +1,14 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_second.*
 
@@ -78,6 +81,19 @@ class SecondFragment : Fragment() {
                         ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f").format(bmi, bmr, tdee),
                         Toast.LENGTH_LONG
                     ).show()
+
+                    // store these values in shared preferences
+
+                    val prefs = this.activity?.getSharedPreferences(Info.spFilename, Context.MODE_PRIVATE)
+                    val editPrefs = prefs?.edit()
+
+                    editPrefs?.putDouble(Info.spKeyHeight, Info.height)
+                    editPrefs?.putDouble(Info.spKeyWeight, Info.weight)
+                    editPrefs?.putDouble(Info.spKeyActivityLevel, Info.activityLevel)
+                    editPrefs?.putDouble(Info.spKeyRate, Info.rate)
+                    editPrefs?.putBoolean(Info.spKeyMale, Info.male)
+                    editPrefs?.putString(Info.spKeyBirthDate, Info.birthDate)
+                    editPrefs?.apply()
 
                     findNavController().navigate(R.id.action_SecondFragment_to_MainFragment)
 

@@ -4,7 +4,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="greeting">It\'s time to get healthy,\nare you ready?</string>
+    <string name="greeting">The simple way to count calories and reach your ideal weight.\n\nIt\'s time to get healthy,\nare you ready?</string>
     <string name="next">Let\'s Go!</string>
 
     <!-- Q&A -->
