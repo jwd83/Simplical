@@ -37,5 +37,10 @@
         >
 
     </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.myapplication.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 
 </navigation>

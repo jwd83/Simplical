@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -69,6 +70,8 @@ class SecondFragment : Fragment() {
                     Info.male = sexIsMale
                     Info.age = age
                     Info.activityLevel = activityLevel
+                    Info.rate = rate
+                    Info.birthDate = birthDate
 
                     // solve bmi/bmr values
                     val bmi = Info.calculateBMI()
@@ -78,22 +81,12 @@ class SecondFragment : Fragment() {
                     // generate a toast message
                     Toast.makeText(
                         context,
-                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f").format(bmi, bmr, tdee),
+                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee),
                         Toast.LENGTH_LONG
                     ).show()
 
                     // store these values in shared preferences
-
-                    val prefs = this.activity?.getSharedPreferences(Info.spFilename, Context.MODE_PRIVATE)
-                    val editPrefs = prefs?.edit()
-
-                    editPrefs?.putDouble(Info.spKeyHeight, Info.height)
-                    editPrefs?.putDouble(Info.spKeyWeight, Info.weight)
-                    editPrefs?.putDouble(Info.spKeyActivityLevel, Info.activityLevel)
-                    editPrefs?.putDouble(Info.spKeyRate, Info.rate)
-                    editPrefs?.putBoolean(Info.spKeyMale, Info.male)
-                    editPrefs?.putString(Info.spKeyBirthDate, Info.birthDate)
-                    editPrefs?.apply()
+                    Info.save(requireActivity())
 
                     findNavController().navigate(R.id.action_SecondFragment_to_MainFragment)
 
