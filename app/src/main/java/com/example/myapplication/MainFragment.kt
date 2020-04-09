@@ -18,6 +18,7 @@ class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        toast("onCreate")
     }
 
     override fun onCreateView(
@@ -25,8 +26,8 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_main, container, false)
+        toast("onCreateView")
 
     }
 
@@ -38,6 +39,6 @@ class MainFragment : Fragment() {
 //            findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
 
         }
-        toast("I RAN!")
+        toast("onViewCreated")
     }
 }

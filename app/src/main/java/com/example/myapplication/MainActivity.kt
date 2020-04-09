@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
             setSupportActionBar(toolbar)
         } else {
-            setContentView(R.layout.activity_home)
+            setContentView(R.layout.fragment_main)
             setSupportActionBar(toolbar)
 //            val intent = Intent(this, HomeActivity::class.java)
 //            startActivity(intent)
