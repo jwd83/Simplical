@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
 
         when (screen) {
-            3 -> ft.replace(R.id.nav_host_fragment, MainFragment())
+            3 -> ft.replace(R.id.nav_host_fragment, HomeFragment())
         }
 
         ft.commit()

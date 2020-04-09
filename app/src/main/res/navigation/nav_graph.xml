@@ -31,9 +31,9 @@
     </fragment>
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.example.myapplication.MainFragment"
+        android:name="com.example.myapplication.HomeFragment"
         android:label="Main Fragment"
-        tools:layout="@layout/fragment_main"
+        tools:layout="@layout/fragment_home"
         >
 
     </fragment>
