@@ -15,13 +15,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+//        Info.reset(this)
         Info.load(this)
 
         if(Info.birthDate == Info.birthDateNotSet) {
             setContentView(R.layout.activity_main)
             setSupportActionBar(toolbar)
         } else {
-            setContentView(R.layout.fragment_main)
+            setContentView(R.layout.activity_home)
             setSupportActionBar(toolbar)
 //            val intent = Intent(this, HomeActivity::class.java)
 //            startActivity(intent)

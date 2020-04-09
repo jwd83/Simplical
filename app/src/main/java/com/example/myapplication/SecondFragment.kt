@@ -79,11 +79,12 @@ class SecondFragment : Fragment() {
                     val tdee = Info.calculateTDEE()
 
                     // generate a toast message
-                    Toast.makeText(
-                        context,
-                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    toast(("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee))
+//                    Toast.makeText(
+//                        context,
+//                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee),
+//                        Toast.LENGTH_LONG
+//                    ).show()
 
                     // store these values in shared preferences
                     Info.save(requireActivity())
