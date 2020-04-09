@@ -31,7 +31,7 @@ object Info {
     var rate: Double = 0.0
 
     // this will need to be computed from birth date
-    var age: Double = 0.0
+    var age: Double = 37.0
 
     fun calculateBMI(): Double {
         return if (height > 0 && weight > 0) {
