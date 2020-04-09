@@ -7,7 +7,6 @@
     android:background="@color/screenBackground"
     android:paddingLeft="16sp"
     android:paddingRight="16sp"
-    android:name="com.example.myapplication.MainFragment"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
     >
 
