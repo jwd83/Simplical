@@ -1,13 +1,10 @@
 package com.example.myapplication
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,15 +14,11 @@ class MainActivity : AppCompatActivity() {
 
 //        Info.reset(this)
         Info.load(this)
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
 
-        if(Info.birthDate == Info.birthDateNotSet) {
-            setContentView(R.layout.activity_main)
-            setSupportActionBar(toolbar)
-        } else {
-            setContentView(R.layout.fragment_main)
-            setSupportActionBar(toolbar)
-//            val intent = Intent(this, HomeActivity::class.java)
-//            startActivity(intent)
+        if(Info.birthDate != Info.birthDateNotSet) {
+            swapScreen(3)
         }
     }
 
@@ -43,5 +36,15 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun swapScreen(screen: Int) {
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+
+        when (screen) {
+            3 -> ft.replace(R.id.nav_host_fragment, MainFragment())
+        }
+
+        ft.commit()
     }
 }
