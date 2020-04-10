@@ -7,9 +7,10 @@
     <string name="greeting">The simple way to count calories and reach your ideal weight.\n\nIt\'s time to get healthy,\nare you ready?</string>
     <string name="next">Let\'s Go!</string>
 
-    <!-- Q&A -->
+    <!-- Q&A / Settings-->
     <string name="previous">Previous</string>
     <string name="acquainted">Getting to Know You</string>
+    <string name="settingsTitle">Settings</string>
     <string name="questionPreface">Answer a few questions to start painting a picture of your health.</string>
     <string name="questionSex">Which sex are you?</string>
     <string name="questionBirthDate">What is your date of birth?</string>
