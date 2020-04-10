@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -35,7 +36,8 @@ class HomeFragment : Fragment() {
         text_calories_remaining.text = "%.0f".format(Info.calculateDailyCalories())
         text_current_weight.text = "%.1f".format(Info.weight)
         button_update_details.setOnClickListener{
-            (activity as MainActivity).swapScreen(4)
+            findNavController().navigate(R.id.action_HomeFragment_to_SettingsFragment)
+//            (activity as MainActivity).swapScreen(4)
 //            findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
         }
     }
