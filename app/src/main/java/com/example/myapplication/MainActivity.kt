@@ -22,22 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         } else {
             super.onCreate(savedInstanceState)
-
-//        Info.reset(this)
             Info.load(this)
             setContentView(R.layout.activity_main)
             setSupportActionBar(toolbar)
 
             if(Info.birthDate != Info.birthDateNotSet) {
-//            findNavController().navigate(HomeFragment)
-//            swapScreen(3)
-
-//                findNavController(nav_host_fragment.id).navigate(R.id.HomeFragment)
-//                findNavController(nav_host_fragment.id).popBackStack()
-//                findNavController(nav_host_fragment.id).setGraph(NavGraph(R.id.nav_graph_home))
-
-                // findNavController(nav_host_fragment.id).navigate(R.id.HomeFragment, null, navOptions {  })
-
                 val nc = findNavController(nav_host_fragment.id)
                 nc.popBackStack(R.id.FirstFragment, true)
                 nc.navigate(R.id.HomeFragment)
@@ -59,16 +48,5 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    fun swapScreen(screen: Int) {
-        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-
-        when (screen) {
-            3 -> ft.replace(R.id.nav_host_fragment, HomeFragment())
-            4 -> ft.replace(R.id.nav_host_fragment, SettingsFragment())
-        }
-
-        ft.commit()
     }
 }

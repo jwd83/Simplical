@@ -18,11 +18,6 @@ class HomeFragment : Fragment() {
 
     private val TAG = "HomeFragment"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,12 +32,6 @@ class HomeFragment : Fragment() {
         text_current_weight.text = "%.1f".format(Info.weight)
         button_update_details.setOnClickListener{
             findNavController().navigate(R.id.action_HomeFragment_to_SettingsFragment)
-//            (activity as MainActivity).swapScreen(4)
-//            findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }
