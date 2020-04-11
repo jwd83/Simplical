@@ -16,7 +16,7 @@
         >
 
         <TextView
-            android:id="@+id/text_settings"
+            android:id="@+id/settings_text_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -30,7 +30,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_sex"
+            android:id="@+id/settings_text_sex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionSex"
@@ -38,19 +38,19 @@
             android:textColor="@color/colorFontDefault" />
 
         <RadioGroup
-            android:id="@+id/radio_sex"
+            android:id="@+id/settings_radio_sex"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
             <RadioButton
-                android:id="@+id/radio_male"
+                android:id="@+id/settings_radio_male"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sexMale"
                 android:textColor="@color/colorFontDefault" />
 
             <RadioButton
-                android:id="@+id/radio_female"
+                android:id="@+id/settings_radio_female"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sexFemale"
@@ -62,7 +62,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_date_of_birth"
+            android:id="@+id/settings_text_date_of_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionBirthDate"
@@ -70,7 +70,7 @@
             android:textColor="@color/colorFontDefault" />
 
         <EditText
-            android:id="@+id/edit_birth"
+            android:id="@+id/settings_edit_birth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -85,7 +85,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_height"
+            android:id="@+id/settings_text_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionHeight"
@@ -93,7 +93,7 @@
             android:textColor="@color/colorFontDefault" />
 
         <EditText
-            android:id="@+id/edit_height"
+            android:id="@+id/settings_edit_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -108,7 +108,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_weight"
+            android:id="@+id/settings_text_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/questionWeight"
@@ -116,7 +116,7 @@
             android:textColor="@color/colorFontDefault" />
 
         <EditText
-            android:id="@+id/edit_weight"
+            android:id="@+id/settings_edit_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -131,7 +131,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_activity_level"
+            android:id="@+id/settings_text_activity_level"
             android:text="@string/questionActivityLevel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,47 +139,47 @@
             android:textColor="@color/colorFontDefault" />
 
         <RadioGroup
-            android:id="@+id/radio_activity_level"
+            android:id="@+id/settings_radio_activity_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <RadioButton
-                android:id="@+id/radio_al_110"
+                android:id="@+id/settings_radio_al_110"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al110"
                 android:textColor="@color/colorFontDefault"
                 />
             <RadioButton
-                android:id="@+id/radio_al_120"
+                android:id="@+id/settings_radio_al_120"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al120"
                 android:textColor="@color/colorFontDefault"
                 />
             <RadioButton
-                android:id="@+id/radio_al_137"
+                android:id="@+id/settings_radio_al_137"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al137"
                 android:textColor="@color/colorFontDefault"
                 />
             <RadioButton
-                android:id="@+id/radio_al_155"
+                android:id="@+id/settings_radio_al_155"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al155"
                 android:textColor="@color/colorFontDefault"
                 />
             <RadioButton
-                android:id="@+id/radio_al_1725"
+                android:id="@+id/settings_radio_al_1725"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al173"
                 android:textColor="@color/colorFontDefault"
                 />
             <RadioButton
-                android:id="@+id/radio_al_190"
+                android:id="@+id/settings_radio_al_190"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/al190"
@@ -192,7 +192,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/text_weight_loss_pacing"
+            android:id="@+id/settings_text_weight_loss_pacing"
             android:text="@string/questionWeightLossPacing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -200,39 +200,39 @@
             android:textColor="@color/colorFontDefault" />
 
         <RadioGroup
-            android:id="@+id/radio_rate"
+            android:id="@+id/settings_radio_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
             <RadioButton
-                android:id="@+id/rate_00"
+                android:id="@+id/settings_rate_00"
                 android:textColor="@color/colorFontDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pace0Lb" />
             <RadioButton
-                android:id="@+id/rate_05"
+                android:id="@+id/settings_rate_05"
                 android:textColor="@color/colorFontDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pace05Lb" />
 
             <RadioButton
-                android:id="@+id/rate_10"
+                android:id="@+id/settings_rate_10"
                 android:textColor="@color/colorFontDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pace1Lb" />
 
             <RadioButton
-                android:id="@+id/rate_15"
+                android:id="@+id/settings_rate_15"
                 android:textColor="@color/colorFontDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pace15Lb" />
 
             <RadioButton
-                android:id="@+id/rate_20"
+                android:id="@+id/settings_rate_20"
                 android:textColor="@color/colorFontDefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
 
 
         <Button
-            android:id="@+id/button_looks_good"
+            android:id="@+id/settings_button_looks_good"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"

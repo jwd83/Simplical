@@ -5,28 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_settings.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SettingsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SettingsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -37,23 +24,78 @@ class SettingsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        settings_button_looks_good.setOnClickListener {
+
+            var success = false
+
+            try {
+                val sexIsMale = when (settings_radio_sex.checkedRadioButtonId) {
+                    R.id.settings_radio_male -> true
+                    R.id.settings_radio_female -> false
+                    else -> throw IllegalArgumentException("Sex required")
                 }
+
+                val activityLevel = when(settings_radio_activity_level.checkedRadioButtonId) {
+                    R.id.settings_radio_al_110 -> 1.1
+                    R.id.settings_radio_al_120 -> 1.2
+                    R.id.settings_radio_al_137 -> 1.37
+                    R.id.settings_radio_al_155 -> 1.55
+                    R.id.settings_radio_al_1725 -> 1.725
+                    R.id.settings_radio_al_190 -> 1.9
+                    else -> throw IllegalArgumentException("Activity level required")
+                }
+
+                val weight = settings_edit_weight.text.toString().toDouble()
+                val height = settings_edit_height.text.toString().toDouble()
+                val birthDate = settings_edit_birth.text.toString()
+                val age = 37.0
+                val rate = when(settings_radio_rate.checkedRadioButtonId) {
+                    R.id.settings_rate_05 -> 0.5
+                    R.id.settings_rate_10 -> 1.0
+                    R.id.settings_rate_15 -> 1.5
+                    R.id.settings_rate_20 -> 2.0
+                    else -> throw IllegalArgumentException("Rate of change required")
+                }
+
+                if(height in 48.0..108.0 && weight in 50.0..600.0) {
+
+                    Info.weight = weight
+                    Info.height = height
+                    Info.male = sexIsMale
+                    Info.age = age
+                    Info.activityLevel = activityLevel
+                    Info.rate = rate
+                    Info.birthDate = birthDate
+
+                    // solve bmi/bmr values
+                    val bmi = Info.calculateBMI()
+                    val bmr = Info.calculateBMR()
+                    val tdee = Info.calculateTDEE()
+
+                    // generate a toast message
+                    toast(("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee))
+//                    Toast.makeText(
+//                        context,
+//                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee),
+//                        Toast.LENGTH_LONG
+//                    ).show()
+
+                    // store these values in shared preferences
+                    Info.save(requireActivity())
+
+                    findNavController().popBackStack()
+
+                    success = true
+                }
+            } catch(e: Throwable) {
+
             }
+            if (!success) {
+                Toast.makeText(context, "Please respond to all questions above", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }
