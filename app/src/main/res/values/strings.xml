@@ -38,6 +38,11 @@
     <string name="pace2Lb">2 pounds a week (very fast!)</string>
     <string name="buttonLooksGood">Looks good!</string>
 
+    <!-- Enter calories -->
+    <string name="enter_calories">Enter Calories</string>
+    <string name="enter_calories_source">Calorie Source</string>
+    <string name="enter_calories_favorite_question">Save to favorites?</string>
+
     <!-- Main Menu -->
     <string name="caloriesRemaining">Calories Remaining Today</string>
     <string name="currentWeight">Current Weight</string>

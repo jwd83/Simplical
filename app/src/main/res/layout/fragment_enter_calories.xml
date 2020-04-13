@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="16sp"
+    android:paddingRight="16sp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:autofillHints=""
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/screenBackground"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/enter_calories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_calories" />
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
