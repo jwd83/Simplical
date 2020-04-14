@@ -39,8 +39,15 @@
     <string name="buttonLooksGood">Looks good!</string>
 
     <!-- Enter calories -->
-    <string name="enter_calories">Enter Calories</string>
-    <string name="enter_calories_source">Calorie Source</string>
+    <string name="enter_calories_title">Calorie Entry</string>
+    <string name="enter_calories_each">Calories (each)</string>
+    <string name="enter_calories_quantity">Quantity</string>
+    <string name="enter_calories_source">Calorie Source (optional)</string>
+    <string name="enter_calories_hint_calories">140</string>
+    <string name="enter_calories_hint_quantity">1</string>
+    <string name="enter_calories_hint_source">Can of Soda</string>
+
+
     <string name="enter_calories_favorite_question">Save to favorites?</string>
 
     <!-- Main Menu -->
