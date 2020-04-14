@@ -90,6 +90,13 @@
         android:text="Update Goal Weight"
          />
 
+        <Button
+            android:id="@+id/button_reset_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Data"
+            />
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

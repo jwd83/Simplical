@@ -37,11 +37,17 @@ object Info {
     var male: Boolean = false
     var birthDate: String? = ""
     var rate: Double = 0.0
-    var caloriesConsumedDate: String = ""
+    var caloriesConsumedDate: String? = ""
     var caloriesConsumed: Double = 0.0
 
     // this will need to be computed from birth date
     var age: Double = 37.0
+
+//      Todo see if this works/how it works
+//    lateinit var myAc: Activity
+//    fun setActivity(ac: Activity) {
+//        myAc = ac
+//    }
 
     fun calculateBMI(): Double {
         return if (height > 0 && weight > 0) {
@@ -90,6 +96,8 @@ object Info {
         editPrefs.putDouble(spKeyWeight, weight)
         editPrefs.putDouble(spKeyActivityLevel, activityLevel)
         editPrefs.putDouble(spKeyRate, rate)
+        editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
+        editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
         editPrefs.apply()
 
         // announce we saved data
@@ -108,6 +116,8 @@ object Info {
         weight = prefs.getDouble(spKeyWeight, 0.0)
         activityLevel = prefs.getDouble(spKeyActivityLevel, 0.0)
         rate = prefs.getDouble(spKeyRate, 0.0)
+        caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
+        caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
 
         // announce we loaded data
         Toast.makeText(activity.applicationContext, "Data loaded", Toast.LENGTH_SHORT).show()
@@ -138,7 +148,7 @@ object Info {
     }
 
     // sleek 1 liner
-    fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
+    private fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
 
 //
 //    fun getISODate(): String {
