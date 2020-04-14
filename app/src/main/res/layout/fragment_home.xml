@@ -90,6 +90,21 @@
         android:text="Update Goal Weight"
          />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
+
+        <Button
+            android:id="@+id/button_debug_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debug Data"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
+
         <Button
             android:id="@+id/button_reset_data"
             android:layout_width="match_parent"

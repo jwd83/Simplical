@@ -24,7 +24,7 @@ object Info {
     private const val spKeyBirthDate: String  = "BIRTH_DATE"
     private const val spKeyRate: String  = "RATE"
     private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
-    private const val spKeyCaloriesConsumed: String  = "RATE"
+    private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
 
 
     // Check not set

@@ -35,6 +35,16 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_HomeFragment_to_EnterCaloriesFragment)
         }
 
+        button_debug_message.setOnClickListener {
+            toast(
+                ("%.1f\n%.1f\n${Info.caloriesConsumedDate}\n%.1f").format(
+                    Info.calculateTDEE(),
+                    Info.rate,
+                    Info.caloriesConsumed
+                )
+            )
+        }
+
         button_reset_data.setOnClickListener {
             Info.reset(requireActivity())
             requireActivity().finish()
