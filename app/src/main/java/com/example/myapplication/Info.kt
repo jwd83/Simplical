@@ -2,8 +2,13 @@ package com.example.myapplication
 
 import android.app.Activity
 import android.content.Context
+import android.os.Build
 import android.widget.Toast
-import androidx.navigation.ActivityNavigatorExtras
+import androidx.annotation.RequiresApi
+import java.sql.Date
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 
 object Info {
     // shared pref's info
@@ -62,6 +67,15 @@ object Info {
         return (calculateTDEE() * 7.0 - rate * 3500.0) / 7.0
     }
 
+    fun calculateRemainingDailyCalories(): Double {
+
+        // this will reset the daily calories if needed
+        addDailyCalories(0.0)
+
+        // solve the remaining calories for today
+        return calculateDailyCalories() - caloriesConsumed
+    }
+
     fun save(activity: Activity) {
         // create preferences editor
         // val prefs = activity.getPreferences(Context.MODE_PRIVATE)
@@ -111,4 +125,29 @@ object Info {
         // save cleared data
         editPrefs.apply()
     }
+
+    fun addDailyCalories(kCals: Double) {
+        val today = getISODate()
+
+        if(caloriesConsumedDate == today) {
+            caloriesConsumed += kCals
+        } else {
+            caloriesConsumed = kCals
+            caloriesConsumedDate = today
+        }
+    }
+
+    // sleek 1 liner
+    fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
+
+//
+//    fun getISODate(): String {
+//
+//        return DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
+////
+////        val current = LocalDateTime.now()
+////
+////        val formatter = DateTimeFormatter.BASIC_ISO_DATE
+////        return current.format(formatter)
+//    }
 }
