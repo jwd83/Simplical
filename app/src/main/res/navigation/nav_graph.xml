@@ -39,6 +39,10 @@
             android:id="@+id/action_HomeFragment_to_SettingsFragment"
             app:destination="@id/SettingsFragment"
             />
+        <action
+            android:id="@+id/action_HomeFragment_to_EnterCaloriesFragment"
+            app:destination="@id/EnterCaloriesFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/SettingsFragment"
@@ -51,5 +55,11 @@
             app:destination="@id/HomeFragment"
             />
     </fragment>
+    <fragment
+        android:id="@+id/EnterCaloriesFragment"
+        android:name="com.example.myapplication.EnterCaloriesFragment"
+        android:label="@string/settings_fragment_enter_calories"
+        tools:layout="@layout/fragment_enter_calories"
+        />
 
 </navigation>

@@ -6,6 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="home_fragment_label">Home</string>
     <string name="settings_fragment_label">Settings</string>
+    <string name="settings_fragment_enter_calories">Enter Calories</string>
     <string name="greeting">The simple way to count calories and reach your ideal weight.\n\nIt\'s time to get healthy,\nare you ready?</string>
     <string name="next">Let\'s Go!</string>
 
@@ -45,14 +46,15 @@
     <string name="enter_calories_source">Calorie Source (optional)</string>
     <string name="enter_calories_hint_calories">140</string>
     <string name="enter_calories_hint_quantity">1</string>
-    <string name="enter_calories_hint_source">Can of Soda</string>
-
+    <string name="enter_calories_hint_source">Can of soda</string>
+    <string name="enter_calories_button">Enter</string>
 
     <string name="enter_calories_favorite_question">Save to favorites?</string>
 
     <!-- Main Menu -->
     <string name="caloriesRemaining">Calories Remaining Today</string>
     <string name="currentWeight">Current Weight</string>
+    <string name="enter_calories">Enter Calories</string>
 
 
     <string name="hello_first_fragment">Welcome to Simplical</string>

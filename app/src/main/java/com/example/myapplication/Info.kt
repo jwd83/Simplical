@@ -12,12 +12,15 @@ object Info {
     const val spFilename: String = "SIMPLICAL"
 
     // Keys
-    const val spKeyWeight: String  = "WEIGHT"
-    const val spKeyHeight: String  = "HEIGHT"
-    const val spKeyActivityLevel: String  = "ACTIVITY_LEVEL"
-    const val spKeyMale: String  = "MALE"
-    const val spKeyBirthDate: String  = "BIRTH_DATE"
-    const val spKeyRate: String  = "RATE"
+    private const val spKeyWeight: String  = "WEIGHT"
+    private const val spKeyHeight: String  = "HEIGHT"
+    private const val spKeyActivityLevel: String  = "ACTIVITY_LEVEL"
+    private const val spKeyMale: String  = "MALE"
+    private const val spKeyBirthDate: String  = "BIRTH_DATE"
+    private const val spKeyRate: String  = "RATE"
+    private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
+    private const val spKeyCaloriesConsumed: String  = "RATE"
+
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
@@ -29,6 +32,8 @@ object Info {
     var male: Boolean = false
     var birthDate: String? = ""
     var rate: Double = 0.0
+    var caloriesConsumedDate: String = ""
+    var caloriesConsumed: Double = 0.0
 
     // this will need to be computed from birth date
     var age: Double = 37.0

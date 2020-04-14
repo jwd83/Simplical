@@ -8,7 +8,6 @@
     android:paddingLeft="16sp"
     android:paddingRight="16sp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    >
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:autofillHints=""
@@ -57,10 +56,10 @@
             android:layout_height="20sp" />
 
         <Button
-        android:id="@+id/button"
+        android:id="@+id/button_enter_calories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Calories"
+        android:text="@string/enter_calories"
         />
 
     <Button
