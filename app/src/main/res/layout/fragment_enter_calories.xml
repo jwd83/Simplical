@@ -67,6 +67,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/enter_calories_hint_quantity"
+            android:text="1"
             android:inputType="numberDecimal" />
 
         <Space
