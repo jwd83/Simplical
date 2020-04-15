@@ -45,6 +45,10 @@ class HomeFragment : Fragment() {
             )
         }
 
+        button_home_update_weight.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_UpdateWeightFragment)
+        }
+
         button_reset_data.setOnClickListener {
             Info.reset(requireActivity())
             requireActivity().finish()

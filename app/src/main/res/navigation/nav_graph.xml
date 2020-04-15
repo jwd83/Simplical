@@ -43,6 +43,10 @@
             android:id="@+id/action_HomeFragment_to_EnterCaloriesFragment"
             app:destination="@id/EnterCaloriesFragment"
             />
+        <action
+            android:id="@+id/action_HomeFragment_to_UpdateWeightFragment"
+            app:destination="@id/UpdateWeightFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/SettingsFragment"
@@ -50,10 +54,6 @@
         android:label="@string/settings_fragment_label"
         tools:layout="@layout/fragment_settings"
         >
-        <action
-            android:id="@+id/action_SettingsFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment"
-            />
     </fragment>
     <fragment
         android:id="@+id/EnterCaloriesFragment"
@@ -61,5 +61,12 @@
         android:label="@string/settings_fragment_enter_calories"
         tools:layout="@layout/fragment_enter_calories"
         />
+    <fragment
+        android:id="@+id/UpdateWeightFragment"
+        android:name="com.example.myapplication.UpdateWeightFragment"
+        android:label="@string/update_weight_title"
+        tools:layout="@layout/fragment_update_weight"
+        />
+
 
 </navigation>
