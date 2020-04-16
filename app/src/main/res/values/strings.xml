@@ -55,11 +55,15 @@
     <string name="update_weight_question">Current Weight?</string>
     <string name="update_weight_button">Save</string>
 
+    <!-- Set goal weight -->
+    <string name="goal_weight_title">Set Goal Weight</string>
+    <string name="goal_weight_question">So, what\'s your goal?</string>
+    <string name="goal_weight_button">Set</string>
+
     <!-- Main Menu -->
     <string name="caloriesRemaining">Calories Remaining Today</string>
     <string name="currentWeight">Current Weight</string>
     <string name="enter_calories">Enter Calories</string>
-
 
     <string name="hello_first_fragment">Welcome to Simplical</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
