@@ -25,7 +25,7 @@ object Info {
     private const val spKeyRate: String  = "RATE"
     private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
     private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
-
+    private const val spKeyGoalWeight: String  = "GOAL_WEIGHT"
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
@@ -39,6 +39,7 @@ object Info {
     var rate: Double = 0.0
     var caloriesConsumedDate: String? = ""
     var caloriesConsumed: Double = 0.0
+    var goalWeight: Double = 0.0
 
     // this will need to be computed from birth date
     var age: Double = 37.0
@@ -98,6 +99,7 @@ object Info {
         editPrefs.putDouble(spKeyRate, rate)
         editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
         editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
+        editPrefs.putDouble(spKeyGoalWeight, goalWeight)
         editPrefs.apply()
 
         // announce we saved data
@@ -118,6 +120,7 @@ object Info {
         rate = prefs.getDouble(spKeyRate, 0.0)
         caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
         caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
+        goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
 
         // announce we loaded data
         Toast.makeText(activity.applicationContext, "Data loaded", Toast.LENGTH_SHORT).show()
