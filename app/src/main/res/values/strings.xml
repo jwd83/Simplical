@@ -64,6 +64,7 @@
     <string name="caloriesRemaining">Calories Remaining Today</string>
     <string name="currentWeight">Current Weight</string>
     <string name="enter_calories">Enter Calories</string>
+    <string name="weightRemaining">Weight Remaining</string>
 
     <string name="hello_first_fragment">Welcome to Simplical</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
