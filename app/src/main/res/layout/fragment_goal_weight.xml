@@ -52,11 +52,12 @@
             android:textColor="@color/colorFontDefault" />
 
         <EditText
-            android:id="@+id/edit_weight_value"
+            android:id="@+id/edit_goal_weight_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            />
 
         <Space
             android:layout_width="match_parent"

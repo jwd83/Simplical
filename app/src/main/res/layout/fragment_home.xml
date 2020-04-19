@@ -101,10 +101,10 @@
        />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_update_goal_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Goal Weight"
+        android:text="@string/updateGoalWeight"
          />
 
     <Space

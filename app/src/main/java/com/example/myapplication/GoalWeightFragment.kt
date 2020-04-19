@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_goal_weight.*
 
 /**
  * A simple [Fragment] subclass.
@@ -19,4 +21,25 @@ class GoalWeightFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_goal_weight, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        goal_weight_button.setOnClickListener {
+            var success = false
+            try {
+                val newGoalWeight = edit_goal_weight_value.text.toString().toDouble()
+                if(newGoalWeight in 50.0..600.0) {
+                    Info.goalWeight = newGoalWeight
+                    Info.save(requireActivity())
+                    success = true
+                    findNavController().popBackStack()
+                }
+            } catch(e: Throwable) {
+
+            }
+            if(!success) {
+                toast("Please enter a valid weight value.")
+            }
+        }
+    }
 }

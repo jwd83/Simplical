@@ -21,9 +21,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        text_calories_remaining.text = "%.0f".format(Info.calculateDailyCalories())
         text_calories_remaining.text = "%.0f".format(Info.calculateRemainingDailyCalories())
         text_current_weight.text = "%.1f".format(Info.weight)
+        text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
+            "%.1f".format(Info.goalWeight - Info.weight)
+        } else {
+            "+%.1f".format(Info.goalWeight - Info.weight)
+        }
 
         button_update_details.setOnClickListener{
             findNavController().navigate(R.id.action_HomeFragment_to_SettingsFragment)
@@ -45,6 +49,10 @@ class HomeFragment : Fragment() {
 
         button_home_update_weight.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_UpdateWeightFragment)
+        }
+
+        button_update_goal_weight.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_UpdateGoalWeight)
         }
 
         button_reset_data.setOnClickListener {

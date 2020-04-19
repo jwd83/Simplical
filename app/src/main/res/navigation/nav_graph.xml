@@ -47,7 +47,12 @@
             android:id="@+id/action_HomeFragment_to_UpdateWeightFragment"
             app:destination="@id/UpdateWeightFragment"
             />
+        <action
+            android:id="@+id/action_HomeFragment_to_UpdateGoalWeight"
+            app:destination="@id/UpdateGoalWeight"
+            />
     </fragment>
+
     <fragment
         android:id="@+id/SettingsFragment"
         android:name="com.example.myapplication.SettingsFragment"
@@ -66,6 +71,12 @@
         android:name="com.example.myapplication.UpdateWeightFragment"
         android:label="@string/update_weight_title"
         tools:layout="@layout/fragment_update_weight"
+        />
+    <fragment
+        android:id="@+id/UpdateGoalWeight"
+        android:name="com.example.myapplication.GoalWeightFragment"
+        android:label="Update Goal Weight"
+        tools:layout="@layout/fragment_goal_weight"
         />
 
 
