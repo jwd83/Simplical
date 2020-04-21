@@ -59,6 +59,7 @@
     <string name="goal_weight_title">Set Goal Weight</string>
     <string name="goal_weight_question">So, what\'s your goal?</string>
     <string name="goal_weight_button">Set</string>
+    <string name="goal_text">Based on your height the World Health Organization lists a healthy weight as between <b>%1$.1f</b> and <b>%2$.1f</b>.</string>
 
     <!-- Main Menu -->
     <string name="caloriesRemaining">Calories Remaining Today</string>

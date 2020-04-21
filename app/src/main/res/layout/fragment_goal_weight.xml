@@ -30,7 +30,7 @@
             android:layout_height="30sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/goal_weight_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"

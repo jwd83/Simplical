@@ -24,6 +24,17 @@ class GoalWeightFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        goal_weight_info.text = "Based on your height the World Health Organization lists a healthy weight as between %.1f and %.1f.".format(
+//            Info.getWeightAtBMI(18.5),
+//            Info.getWeightAtBMI(25.0)
+//        )
+
+        goal_weight_info.text = getString(
+            R.string.goal_text,
+            Info.getWeightAtBMI(18.5),
+            Info.getWeightAtBMI(25.0)
+        )
+
         goal_weight_button.setOnClickListener {
             var success = false
             try {
