@@ -150,6 +150,13 @@ object Info {
         }
     }
 
+    fun getWeightAtBMI(bmi: Double): Double {
+        return if (height > 0.0)
+            (bmi / 703.0717 * height * height)
+        else
+            0.0
+    }
+
     // sleek 1 liner
     private fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
 
