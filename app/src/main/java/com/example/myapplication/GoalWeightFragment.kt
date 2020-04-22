@@ -32,7 +32,8 @@ class GoalWeightFragment : Fragment() {
         goal_weight_info.text = getString(
             R.string.goal_text,
             Info.getWeightAtBMI(18.5),
-            Info.getWeightAtBMI(25.0)
+            Info.getWeightAtBMI(25.0),
+            Info.getWeightAtBMI(21.75)
         )
 
         goal_weight_button.setOnClickListener {
