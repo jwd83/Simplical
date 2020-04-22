@@ -59,7 +59,16 @@
     <string name="goal_weight_title">Set Goal Weight</string>
     <string name="goal_weight_question">So, what\'s your goal?</string>
     <string name="goal_weight_button">Set</string>
-    <string name="goal_text">Based on your height the World Health Organization lists a healthy weight as between <b>%1$.1f</b> at 18.5 BMI and <b>%2$.1f</b> at 25.0 BMI.\n\nAt 21.75 BMI your weight would be <b>%3$.1f</b></string>
+    <string name="goal_text">
+        Based on your height the World Health Organization lists a healthy weight as between
+        <b>%1$.1f</b> at 18.5 BMI and <b>%2$.1f</b> at 25.0 BMI.\n
+        \n
+        At 21.75 BMI your weight would be <b>%3$.1f</b>\n
+        \n
+        The D. R. Miller Ideal Body Weight formula suggests a weight of %4$.1f based on your
+        height and sex.
+
+    </string>
 
     <!-- Main Menu -->
     <string name="caloriesRemaining">Calories Remaining Today</string>

@@ -2,10 +2,7 @@ package com.example.myapplication
 
 import android.app.Activity
 import android.content.Context
-import android.os.Build
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import java.sql.Date
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -155,6 +152,22 @@ object Info {
             (bmi / 703.0717 * height * height)
         else
             0.0
+    }
+
+    fun getMillerIBW(): Double {
+        /*
+        D. R. Miller Formula (1983)
+
+        Male:	56.2 kg + 1.41 kg per inch over 5 feet
+        Female:	53.1 kg + 1.36 kg per inch over 5 feet
+         */
+
+        val kgToLbs = 2.20462
+
+        return if (male)
+            56.2 * kgToLbs + 1.41 * kgToLbs * (height - 60)
+        else
+            53.1 * kgToLbs + 1.36 * kgToLbs * (height - 60)
     }
 
     // sleek 1 liner
