@@ -51,7 +51,7 @@
     <string name="enter_calories_favorite_question">Save to favorites?</string>
 
     <!-- Update weight -->
-    <string name="update_weight_title">Update Weight</string>
+    <string name="update_weight_title">Weigh In</string>
     <string name="update_weight_question">Current Weight?</string>
     <string name="update_weight_button">Save</string>
 
@@ -76,6 +76,7 @@
     <string name="enter_calories">Enter Calories</string>
     <string name="weightRemaining">Weight Remaining</string>
     <string name="updateGoalWeight">Update Goal Weight</string>
+    <string name="weighIn">Weigh In</string>
 
     <string name="hello_first_fragment">Welcome to Simplical</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
