@@ -14,118 +14,127 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:background="@color/screenBackground"
-        android:orientation="vertical"
-        >
-    <TextView
-        android:id="@+id/text_calories_remaining"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="70sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/text_calories_remaining_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/caloriesRemaining"
+        <TextView
+            android:id="@+id/text_calories_remaining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="70sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
-    <TextView
-        android:id="@+id/text_current_weight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="70sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/text_calories_remaining_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/caloriesRemaining"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/text_current_weight_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/currentWeight"
+        <TextView
+            android:id="@+id/text_current_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="70sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/text_current_weight_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/currentWeight"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/text_goal_weight_left"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="70sp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/text_goal_weight_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="70sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/text_goal_weight_left_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/weightRemaining"
-        android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/text_goal_weight_left_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weightRemaining"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="30sp" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
 
-    <Button
-        android:id="@+id/button_enter_calories"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_calories"
-        />
+        <Button
+            android:id="@+id/button_enter_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_calories"
+            />
 
-    <Button
-        android:id="@+id/button_home_update_weight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/weighIn"
-         />
+        <Button
+            android:id="@+id/button_enter_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enterFavorite"
+            />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="30sp" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
 
-    <Button
-        android:id="@+id/button_update_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Details"
-       />
+        <Button
+            android:id="@+id/button_home_update_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weighIn"
+             />
 
-    <Button
-        android:id="@+id/button_update_goal_weight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/updateGoalWeight"
-         />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="30sp" />
+        <Button
+            android:id="@+id/button_update_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updateDetails"
+           />
 
-    <Button
-        android:id="@+id/button_debug_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Debug Data"
-        />
+        <Button
+            android:id="@+id/button_update_goal_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updateGoalWeight"
+             />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="30sp" />
+<!--        <Space-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="30sp" />-->
 
-    <Button
-        android:id="@+id/button_reset_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Reset Data"
-        />
+<!--        <Button-->
+<!--            android:id="@+id/button_debug_message"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Debug Data"-->
+<!--            />-->
 
+<!--        <Space-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="30sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button_reset_data"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Reset Data"-->
+<!--            />-->
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

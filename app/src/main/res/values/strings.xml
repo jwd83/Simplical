@@ -77,6 +77,8 @@
     <string name="weightRemaining">Weight Remaining</string>
     <string name="updateGoalWeight">Update Goal Weight</string>
     <string name="weighIn">Weigh In</string>
+    <string name="enterFavorite">Enter Favorite</string>
+    <string name="updateDetails">Update Details</string>
 
     <string name="hello_first_fragment">Welcome to Simplical</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
