@@ -70,7 +70,7 @@
 
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="20sp" />
+        android:layout_height="30sp" />
 
     <Button
         android:id="@+id/button_enter_calories"
@@ -86,12 +86,9 @@
         android:text="@string/weighIn"
          />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Extra Exercise"
-        />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="30sp" />
 
     <Button
         android:id="@+id/button_update_details"
