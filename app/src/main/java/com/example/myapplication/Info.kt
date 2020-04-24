@@ -11,6 +11,12 @@ import java.time.format.DateTimeFormatter
 // https://developer.android.com/training/data-storage/room
 // https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0
 
+// General Data storage
+// https://developer.android.com/training/data-storage
+// https://kotlinlang.org/docs/reference/collections-overview.html
+// https://kotlinlang.org/docs/reference/iterators.html
+
+
 object Info {
     // shared pref's info
 
@@ -30,6 +36,9 @@ object Info {
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
+
+    // List of favorites
+    val favorites = mutableListOf<FavoriteFood>()
 
     // working data
     var height: Double = 0.0
@@ -177,14 +186,32 @@ object Info {
     // sleek 1 liner
     private fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
 
-//
-//    fun getISODate(): String {
-//
-//        return DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
-////
-////        val current = LocalDateTime.now()
-////
-////        val formatter = DateTimeFormatter.BASIC_ISO_DATE
-////        return current.format(formatter)
-//    }
+    //
+    fun getNumberOfFavorites(): Int {
+        return favorites.count()
+    }
+
+    fun addFavorite(name: String, calories: Double) {
+        favorites.add(FavoriteFood(getNextFavoritesKey(), name, calories))
+    }
+
+    fun saveFavorites() {
+//        var saveData = favorites.
+
+
+    }
+
+    fun loadFavorites() {
+
+    }
+
+    private fun getNextFavoritesKey(): Int {
+        var keyNum = 0
+
+        favorites.forEach{
+            if (it.id > keyNum) keyNum = it.id
+        }
+        keyNum += 1
+        return keyNum
+    }
 }
