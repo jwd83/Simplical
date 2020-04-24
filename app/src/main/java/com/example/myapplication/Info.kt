@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import com.google.gson.Gson
 import android.app.Activity
 import android.content.Context
 import android.widget.Toast
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import kotlin.reflect.typeOf
 
 
 // SQLite with Room
@@ -33,12 +35,13 @@ object Info {
     private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
     private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
     private const val spKeyGoalWeight: String  = "GOAL_WEIGHT"
+    private const val spKeyFavorites: String  = "FAVORITES"
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
 
     // List of favorites
-    val favorites = mutableListOf<FavoriteFood>()
+    var favorites = mutableListOf<FavoriteFood>()
 
     // working data
     var height: Double = 0.0
@@ -97,8 +100,11 @@ object Info {
         // create preferences editor
         // val prefs = activity.getPreferences(Context.MODE_PRIVATE)
         val prefs = activity.getSharedPreferences(spFilename, Context.MODE_PRIVATE)
-
         val editPrefs = prefs.edit()
+
+        // create Gson object to save favorites list
+        val gson: Gson = Gson()
+        val json: String = gson.toJson(favorites)
 
         // save data
         editPrefs.putString(spKeyBirthDate, birthDate)
@@ -110,6 +116,7 @@ object Info {
         editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
         editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
         editPrefs.putDouble(spKeyGoalWeight, goalWeight)
+        editPrefs.putString(spKeyFavorites, json)
         editPrefs.apply()
 
         // announce we saved data
@@ -131,6 +138,16 @@ object Info {
         caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
         caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
         goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
+        val favoritesJson = prefs.getString(spKeyFavorites, "")
+
+        // create Gson object to save favorites list
+        try {
+            val gson: Gson = Gson()
+            favorites = gson.fromJson(favoritesJson, Array<FavoriteFood>::class.java).toMutableList()
+        }
+        catch (e: Throwable ) {
+
+        }
 
         // announce we loaded data
         Toast.makeText(activity.applicationContext, "Data loaded", Toast.LENGTH_SHORT).show()

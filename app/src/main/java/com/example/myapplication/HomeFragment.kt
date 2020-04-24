@@ -37,13 +37,16 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_HomeFragment_to_EnterCaloriesFragment)
         }
 
-
         button_home_update_weight.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_UpdateWeightFragment)
         }
 
         button_update_goal_weight.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_UpdateGoalWeight)
+        }
+
+        button_enter_favorite.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_EnterFavoriteFragment)
         }
 
 //        button_debug_message.setOnClickListener {

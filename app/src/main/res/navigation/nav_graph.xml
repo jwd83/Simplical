@@ -51,6 +51,10 @@
             android:id="@+id/action_HomeFragment_to_UpdateGoalWeight"
             app:destination="@id/UpdateGoalWeight"
             />
+        <action
+            android:id="@+id/action_HomeFragment_to_EnterFavoriteFragment"
+            app:destination="@id/EnterFavoriteFragment"
+            />
     </fragment>
 
     <fragment
@@ -78,6 +82,11 @@
         android:label="Update Goal Weight"
         tools:layout="@layout/fragment_goal_weight"
         />
-
+    <fragment
+        android:id="@+id/EnterFavoriteFragment"
+        android:name="com.example.myapplication.EnterFavoriteFragment"
+        android:label="Enter Favorite"
+        tools:layout="@layout/fragment_enter_favorite"
+        />
 
 </navigation>

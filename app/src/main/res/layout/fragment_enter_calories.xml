@@ -99,7 +99,7 @@
             android:layout_height="30sp" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/switch_save_to_favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/enter_calories_favorite_question" />

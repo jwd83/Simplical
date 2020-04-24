@@ -32,9 +32,18 @@ class EnterCaloriesFragment : Fragment() {
 
                 val calories = text_calories.text.toString().toDouble()
                 val quantity = text_quantity.text.toString().toDouble()
+                val source = text_source.text.toString()
+
                 Info.addDailyCalories(calories * quantity)
+
+                if(switch_save_to_favorites.isChecked) {
+                    Info.addFavorite(source, calories)
+                }
+
                 Info.save(requireActivity())
                 success = true
+
+
                 findNavController().popBackStack()
 
             } catch(e: Throwable) {
