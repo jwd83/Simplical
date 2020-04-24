@@ -7,6 +7,10 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
+// SQLite with Room
+// https://developer.android.com/training/data-storage/room
+// https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0
+
 object Info {
     // shared pref's info
 
