@@ -209,17 +209,9 @@ object Info {
     }
 
     fun addFavorite(name: String, calories: Double) {
+
+        // todo prevent adding duplicate item name
         favorites.add(FavoriteFood(getNextFavoritesKey(), name, calories))
-    }
-
-    fun saveFavorites() {
-//        var saveData = favorites.
-
-
-    }
-
-    fun loadFavorites() {
-
     }
 
     private fun getNextFavoritesKey(): Int {

@@ -26,7 +26,7 @@ class EnterFavoriteFragment : Fragment() {
         var favList: String = ""
 
         Info.favorites.forEach{
-            favList += "${it.name}\n"
+            favList += "(${it.calories}) ${it.name}\n"
         }
         text_favorites.text = favList
     }
