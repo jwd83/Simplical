@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_enter_favorite.*
 
+// info on recycler views
+// https://developer.android.com/guide/topics/ui/layout/recyclerview
+
 /**
  * A simple [Fragment] subclass.
  */
