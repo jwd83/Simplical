@@ -31,6 +31,6 @@ class EnterFavoriteFragment : Fragment() {
         Info.favorites.forEach{
             favList += "(${it.calories}) ${it.name}\n"
         }
-        text_favorites.text = favList
+//        text_favorites.text = favList
     }
 }
