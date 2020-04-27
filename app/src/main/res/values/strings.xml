@@ -84,4 +84,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="select_favorite">Select Favorite</string>
+    <string name="choose_favorite">Choose Favorite</string>
 </resources>

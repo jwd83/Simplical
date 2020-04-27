@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
 import kotlinx.android.synthetic.main.fragment_enter_favorite.*
 
 // info on recycler views
@@ -26,11 +27,21 @@ class EnterFavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var favList: String = ""
+        val rgf = radio_group_favorite
 
         Info.favorites.forEach{
-            favList += "(${it.calories}) ${it.name}\n"
+            val rb = RadioButton(requireActivity())
+            rb.text = it.name               // set the text of the button
+            rb.id = View.generateViewId()   // create an ID on the fly
+            rgf.addView(rb)                 // add button to our favorites group
         }
+
+//
+//        var favList: String = ""
+//
+//        Info.favorites.forEach{
+//            favList += "(${it.calories}) ${it.name}\n"
+//        }
 //        text_favorites.text = favList
     }
 }
