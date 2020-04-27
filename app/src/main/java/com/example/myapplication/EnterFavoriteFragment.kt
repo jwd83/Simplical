@@ -33,7 +33,17 @@ class EnterFavoriteFragment : Fragment() {
             val rb = RadioButton(requireActivity())
             rb.text = it.name               // set the text of the button
             rb.id = View.generateViewId()   // create an ID on the fly
+            it.id = rb.id
             rgf.addView(rb)                 // add button to our favorites group
+        }
+
+        button_choose_favorite.setOnClickListener {
+            val selectedId = radio_group_favorite.checkedRadioButtonId
+            Info.favorites.forEach {
+                if (selectedId == it.id) {
+                    toast("This was selected: ${it.name}")
+                }
+            }
         }
 
 //
