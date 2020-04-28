@@ -34,7 +34,7 @@ class EnterCaloriesFragment : Fragment() {
                 val quantity = text_quantity.text.toString().toDouble()
                 val source = text_source.text.toString()
 
-                Info.addDailyCalories(calories * quantity)
+                Info.dailyFoodsAdd(calories, quantity, source)
 
                 if(switch_save_to_favorites.isChecked) {
                     Info.addFavorite(source, calories)

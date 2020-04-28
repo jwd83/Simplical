@@ -6,7 +6,6 @@ import android.content.Context
 import android.widget.Toast
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import kotlin.reflect.typeOf
 
 
 // SQLite with Room
@@ -36,12 +35,15 @@ object Info {
     private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
     private const val spKeyGoalWeight: String  = "GOAL_WEIGHT"
     private const val spKeyFavorites: String  = "FAVORITES"
+    private const val spKeyDailyFoods: String = "DAILY_FOODS"
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
 
     // List of favorites
-    var favorites = mutableListOf<FavoriteFood>()
+    var favoriteFoods = mutableListOf<Food>()
+    var dailyFoods = mutableListOf<Food>()
+    var dailyFoodsDate: String? = ""
 
     // working data
     var height: Double = 0.0
@@ -87,15 +89,6 @@ object Info {
         return (calculateTDEE() * 7.0 - rate * 3500.0) / 7.0
     }
 
-    fun calculateRemainingDailyCalories(): Double {
-
-        // this will reset the daily calories if needed
-        addDailyCalories(0.0)
-
-        // solve the remaining calories for today
-        return calculateDailyCalories() - caloriesConsumed
-    }
-
     fun save(activity: Activity) {
         // create preferences editor
         // val prefs = activity.getPreferences(Context.MODE_PRIVATE)
@@ -104,7 +97,8 @@ object Info {
 
         // create Gson object to save favorites list
         val gson: Gson = Gson()
-        val json: String = gson.toJson(favorites)
+        val favoritesJSON: String = gson.toJson(favoriteFoods)
+        val dailyJSON: String = gson.toJson(dailyFoods)
 
         // save data
         editPrefs.putString(spKeyBirthDate, birthDate)
@@ -116,7 +110,8 @@ object Info {
         editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
         editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
         editPrefs.putDouble(spKeyGoalWeight, goalWeight)
-        editPrefs.putString(spKeyFavorites, json)
+        editPrefs.putString(spKeyFavorites, favoritesJSON)
+        editPrefs.putString(spKeyDailyFoods, dailyJSON)
         editPrefs.apply()
 
         // announce we saved data
@@ -127,8 +122,10 @@ object Info {
         // create preferences editor
         // val prefs = activity.getPreferences(Context.MODE_PRIVATE)
         val prefs = activity.getSharedPreferences(spFilename, Context.MODE_PRIVATE)
+        // create Gson object to import our favorite and daily food lists
+        val gson: Gson = Gson()
 
-        // load data
+        // load basic data
         birthDate = prefs.getString(spKeyBirthDate, birthDateNotSet)
         male = prefs.getBoolean(spKeyMale, false)
         height = prefs.getDouble(spKeyHeight, 0.0)
@@ -138,19 +135,23 @@ object Info {
         caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
         caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
         goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
+
+        // load Json lists
         val favoritesJson = prefs.getString(spKeyFavorites, "")
+        val dailyJson =  prefs.getString(spKeyDailyFoods, "")
 
-        // create Gson object to save favorites list
         try {
-            val gson: Gson = Gson()
-            favorites = gson.fromJson(favoritesJson, Array<FavoriteFood>::class.java).toMutableList()
+            favoriteFoods = gson.fromJson(favoritesJson, Array<Food>::class.java).toMutableList()
         }
-        catch (e: Throwable ) {
+        catch (e: Throwable) {
 
         }
+        try {
+            dailyFoods = gson.fromJson(dailyJson, Array<Food>::class.java).toMutableList()
+        }
+        catch (e: Throwable) {
 
-        // announce we loaded data
-        Toast.makeText(activity.applicationContext, "Data loaded", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun reset(activity: Activity) {
@@ -166,14 +167,46 @@ object Info {
         editPrefs.apply()
     }
 
-    fun addDailyCalories(kCals: Double) {
+    /**
+     * Return how many calories we have left for today
+     */
+    fun dailyFoodsAvailableCalories(): Double {
+        return calculateDailyCalories() - dailyFoodsConsumedCalories()
+    }
+
+    /**
+     * Add an entry to our daily foods list
+     */
+    fun dailyFoodsAdd(calories: Double, qty: Double, name: String) {
+        dailyFoodsReset()                                       // check for date change
+        dailyFoods.add(Food(0, name, calories, qty))        // add new food
+    }
+
+    /**
+     * return the total number of calories consumed today
+     */
+    fun dailyFoodsConsumedCalories(): Double {
+        var totalCalories = 0.0
+
+        // check for date change
+        dailyFoodsReset()
+
+        dailyFoods.forEach{
+            totalCalories += it.calories * it.qty
+        }
+
+        return totalCalories
+    }
+
+    /**
+     * Will reset the daily food intake total if the date has changed OR if forceReset is true
+     */
+    private fun dailyFoodsReset(forceReset: Boolean = false) {
         val today = getISODate()
 
-        if(caloriesConsumedDate == today) {
-            caloriesConsumed += kCals
-        } else {
-            caloriesConsumed = kCals
-            caloriesConsumedDate = today
+        if(dailyFoodsDate != today || forceReset) {
+            dailyFoodsDate = today
+            dailyFoods = mutableListOf<Food>()
         }
     }
 
@@ -203,24 +236,8 @@ object Info {
     // sleek 1 liner
     private fun getISODate(): String = DateTimeFormatter.BASIC_ISO_DATE.format(LocalDateTime.now())
 
-    //
-    fun getNumberOfFavorites(): Int {
-        return favorites.count()
-    }
-
     fun addFavorite(name: String, calories: Double) {
-
         // todo prevent adding duplicate item name
-        favorites.add(FavoriteFood(getNextFavoritesKey(), name, calories))
-    }
-
-    private fun getNextFavoritesKey(): Int {
-        var keyNum = 0
-
-        favorites.forEach{
-            if (it.id > keyNum) keyNum = it.id
-        }
-        keyNum += 1
-        return keyNum
+        favoriteFoods.add(Food(0, name, calories))
     }
 }

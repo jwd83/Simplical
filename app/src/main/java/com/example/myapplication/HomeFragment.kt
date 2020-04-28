@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text_calories_remaining.text = "%.0f".format(Info.calculateRemainingDailyCalories())
+        text_calories_remaining.text = "%.0f".format(Info.dailyFoodsAvailableCalories())
         text_current_weight.text = "%.1f".format(Info.weight)
         text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
             "%.1f".format(Info.goalWeight - Info.weight)
