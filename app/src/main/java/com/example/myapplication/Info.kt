@@ -3,7 +3,6 @@ package com.example.myapplication
 import com.google.gson.Gson
 import android.app.Activity
 import android.content.Context
-import android.widget.Toast
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -19,8 +18,6 @@ import java.time.format.DateTimeFormatter
 
 
 object Info {
-    // shared pref's info
-
     // Filename
     const val spFilename: String = "SIMPLICAL"
 
@@ -36,6 +33,7 @@ object Info {
     private const val spKeyGoalWeight: String  = "GOAL_WEIGHT"
     private const val spKeyFavorites: String  = "FAVORITES"
     private const val spKeyDailyFoods: String = "DAILY_FOODS"
+    private const val spKeyDailyFoodsDate: String ="DAILY_FOODS_DATE"
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
@@ -43,7 +41,6 @@ object Info {
     // List of favorites
     var favoriteFoods = mutableListOf<Food>()
     var dailyFoods = mutableListOf<Food>()
-    var dailyFoodsDate: String? = ""
 
     // working data
     var height: Double = 0.0
@@ -55,6 +52,7 @@ object Info {
     var caloriesConsumedDate: String? = ""
     var caloriesConsumed: Double = 0.0
     var goalWeight: Double = 0.0
+    var dailyFoodsDate: String? = ""
 
     // this will need to be computed from birth date
     var age: Double = 37.0
@@ -112,10 +110,8 @@ object Info {
         editPrefs.putDouble(spKeyGoalWeight, goalWeight)
         editPrefs.putString(spKeyFavorites, favoritesJSON)
         editPrefs.putString(spKeyDailyFoods, dailyJSON)
+        editPrefs.putString(spKeyDailyFoodsDate, dailyFoodsDate)
         editPrefs.apply()
-
-        // announce we saved data
-        Toast.makeText(activity.applicationContext, "Data saved", Toast.LENGTH_SHORT).show()
     }
 
     fun load(activity: Activity) {
@@ -135,6 +131,7 @@ object Info {
         caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
         caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
         goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
+        dailyFoodsDate = prefs.getString(spKeyDailyFoodsDate, "")
 
         // load Json lists
         val favoritesJson = prefs.getString(spKeyFavorites, "")

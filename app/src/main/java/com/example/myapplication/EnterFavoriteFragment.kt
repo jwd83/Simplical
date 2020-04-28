@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_enter_favorite.*
 
 // info on recycler views
@@ -38,11 +39,23 @@ class EnterFavoriteFragment : Fragment() {
         }
 
         button_choose_favorite.setOnClickListener {
-            val selectedId = radio_group_favorite.checkedRadioButtonId
-            Info.favoriteFoods.forEach {
-                if (selectedId == it.id) {
-                    toast("This was selected: ${it.name}")
+            var success = false
+            try {
+                val selectedId = radio_group_favorite.checkedRadioButtonId
+                val qty = edit_favorite_quantity.text.toString().toDouble()
+                Info.favoriteFoods.forEach {
+                    if (selectedId == it.id) {
+                        Info.dailyFoodsAdd(it.calories, qty, it.name)
+                        Info.save(requireActivity())
+                        success = true
+                        findNavController().popBackStack()
+                    }
                 }
+            }
+            catch (e: Throwable) {
+            }
+            if(!success) {
+                toast("Please make a valid entry")
             }
         }
 

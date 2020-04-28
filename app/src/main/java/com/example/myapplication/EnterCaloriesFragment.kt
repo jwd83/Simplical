@@ -43,7 +43,6 @@ class EnterCaloriesFragment : Fragment() {
                 Info.save(requireActivity())
                 success = true
 
-
                 findNavController().popBackStack()
 
             } catch(e: Throwable) {
@@ -51,7 +50,6 @@ class EnterCaloriesFragment : Fragment() {
             }
             if (!success) {
                 toast( "Please respond to all questions above")
-//                Toast.makeText(context,, Toast.LENGTH_LONG).show()
             }
         }
     }

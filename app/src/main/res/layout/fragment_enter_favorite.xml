@@ -40,6 +40,33 @@
             android:layout_width="match_parent"
             android:layout_height="20sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/colorFontDefault"
+            android:id="@+id/text_quantity"
+            android:text="@string/quantity" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20sp" />
+
+        <EditText
+            android:id="@+id/edit_favorite_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/_1"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20sp" />
+
         <Button
             android:id="@+id/button_choose_favorite"
             android:layout_width="wrap_content"
