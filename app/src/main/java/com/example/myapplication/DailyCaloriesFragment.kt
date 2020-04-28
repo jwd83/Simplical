@@ -24,14 +24,14 @@ class DailyCaloriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val vlist = daily_review_vertical_list
+        val verticalList = daily_review_vertical_list
 
         Info.dailyFoods.forEach{
-            val food_switch = Switch(requireActivity())
-            food_switch.text = "${it.name} : ${it.qty} * ${it.calories} = ${it.qty * it.calories}"
-            food_switch.id = View.generateViewId()
-            it.id = food_switch.id
-            vlist.addView(food_switch)
+            val foodSwitch = Switch(requireActivity())
+            foodSwitch.text = "${it.name} : ${it.qty} * ${it.calories} = ${it.qty * it.calories}"
+            foodSwitch.id = View.generateViewId()
+            it.id = foodSwitch.id
+            verticalList.addView(foodSwitch)
         }
 
         button_remove_from_favorites.setOnClickListener {
@@ -42,7 +42,6 @@ class DailyCaloriesFragment : Fragment() {
                     val dailyFoodSwitch: Switch = view.findViewById(food.id)
                     if (dailyFoodSwitch.isChecked) {
                         foodsToRemove.add(idx)
-//                        Info.dailyFoods.removeAt(idx)
                     }
                 }
 
