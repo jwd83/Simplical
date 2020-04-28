@@ -32,7 +32,11 @@ class EnterCaloriesFragment : Fragment() {
 
                 val calories = text_calories.text.toString().toDouble()
                 val quantity = text_quantity.text.toString().toDouble()
-                val source = text_source.text.toString()
+                var source = text_source.text.toString().trim()
+
+                if (source == "") {
+                    source = "Unnamed"
+                }
 
                 Info.dailyFoodsAdd(calories, quantity, source)
 

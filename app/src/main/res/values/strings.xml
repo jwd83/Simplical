@@ -87,4 +87,10 @@
     <string name="choose_favorite">Choose Favorite</string>
     <string name="quantity">Quantity</string>
     <string name="_1">1</string>
+
+    <string name="remove">Remove</string>
+    <string name="day_in_review">Day in Review</string>
+    <string name="select_any_items_you_would_like_to_remove">Select any items you would like to remove.</string>
+    <string name="review_daily_calories">Review Daily Calories</string>
+    <string name="remove_favorites">Remove Favorites</string>
 </resources>

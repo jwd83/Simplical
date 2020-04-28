@@ -85,16 +85,29 @@
             android:text="@string/enterFavorite"
             />
 
+        <Button
+            android:id="@+id/button_home_update_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weighIn" />
+
         <Space
             android:layout_width="wrap_content"
             android:layout_height="30sp" />
 
         <Button
-            android:id="@+id/button_home_update_weight"
+            android:id="@+id/button_review_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/weighIn"
-             />
+            android:text="@string/review_daily_calories"
+            />
+
+        <Button
+            android:id="@+id/button_remove_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_favorites"
+            />
 
         <Space
             android:layout_width="wrap_content"

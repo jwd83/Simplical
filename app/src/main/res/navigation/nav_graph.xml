@@ -53,8 +53,11 @@
             />
         <action
             android:id="@+id/action_HomeFragment_to_EnterFavoriteFragment"
-            app:destination="@id/EnterFavoriteFragment"
+            app:destination="@id/EnterFavorite"
             />
+        <action
+            android:id="@+id/action_HomeFragment_to_DailyCalories"
+            app:destination="@id/DailyCalories" />
     </fragment>
 
     <fragment
@@ -83,10 +86,17 @@
         tools:layout="@layout/fragment_goal_weight"
         />
     <fragment
-        android:id="@+id/EnterFavoriteFragment"
+        android:id="@+id/EnterFavorite"
         android:name="com.example.myapplication.EnterFavoriteFragment"
         android:label="Enter Favorite"
         tools:layout="@layout/fragment_enter_favorite"
         />
+    <fragment
+        android:id="@+id/DailyCalories"
+        android:name="com.example.myapplication.DailyCaloriesFragment"
+        label="Day in Review"
+        tools:layout="@layout/fragment_daily_calories"
+        />
+
 
 </navigation>
