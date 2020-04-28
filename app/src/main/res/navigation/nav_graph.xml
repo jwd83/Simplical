@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_DailyCalories"
             app:destination="@id/DailyCalories" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ManageFavorites"
+            app:destination="@id/ManageFavorites" />
     </fragment>
 
     <fragment
@@ -97,6 +100,11 @@
         label="Day in Review"
         tools:layout="@layout/fragment_daily_calories"
         />
-
+    <fragment
+        android:id="@+id/ManageFavorites"
+        android:name="com.example.myapplication.ManageFavoritesFragment"
+        label="Manage Favorites"
+        tools:layout="@layout/fragment_manage_favorites"
+    />
 
 </navigation>

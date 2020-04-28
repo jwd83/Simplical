@@ -23,8 +23,8 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/colorFontDefault"
-            android:id="@+id/text_daily_review"
-            android:text="@string/day_in_review" />
+            android:id="@+id/text_manage_favorites"
+            android:text="@string/manage_favorites" />
 
         <Space
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:background="@color/screenBackground"
             android:orientation="vertical"
-            android:id="@+id/daily_review_vertical_list" >
+            android:id="@+id/favorites_vertical_list" >
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -53,7 +53,7 @@
             android:layout_height="20sp" />
 
         <Button
-            android:id="@+id/button_remove_from_day"
+            android:id="@+id/button_remove_from_favorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/accept"

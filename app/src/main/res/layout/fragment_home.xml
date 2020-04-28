@@ -103,10 +103,10 @@
             />
 
         <Button
-            android:id="@+id/button_remove_favorites"
+            android:id="@+id/button_manage_favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/remove_favorites"
+            android:text="@string/manage_favorites"
             />
 
         <Space

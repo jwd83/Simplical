@@ -1,11 +1,15 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Space
 import android.widget.Switch
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_daily_calories.*
 
@@ -28,13 +32,17 @@ class DailyCaloriesFragment : Fragment() {
 
         Info.dailyFoods.forEach{
             val foodSwitch = Switch(requireActivity())
-            foodSwitch.text = "${it.name} : ${it.qty} * ${it.calories} = ${it.qty * it.calories}"
+            foodSwitch.text = "${it.name}: ${it.qty} * ${it.calories} = ${it.qty * it.calories}"
             foodSwitch.id = View.generateViewId()
             it.id = foodSwitch.id
             verticalList.addView(foodSwitch)
         }
 
-        button_remove_from_favorites.setOnClickListener {
+        addText("Calorie Budget:    %.1f".format(Info.calculateDailyCalories()), 30)
+        addText("Calories Used:    %.1f".format(Info.dailyFoodsConsumedCalories()))
+        addText("Calories Left:    %.1f".format(Info.dailyFoodsAvailableCalories()))
+
+        button_remove_from_day.setOnClickListener {
             try {
                 var foodsToRemove = mutableListOf<Int>()
 
@@ -55,5 +63,15 @@ class DailyCaloriesFragment : Fragment() {
                 toast("An error occurred:\n${e.message}")
             }
         }
+    }
+
+    private fun addText(str: CharSequence, topPadding: Int = 0) {
+        var txt = TextView(requireActivity())
+        txt.setTextColor(Color.BLACK)
+        txt.setPadding(0,topPadding,0,0)
+        txt.gravity = Gravity.RIGHT
+        txt.text = str
+        txt.textSize = 20f
+        daily_review_vertical_list.addView(txt)
     }
 }

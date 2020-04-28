@@ -93,4 +93,9 @@
     <string name="select_any_items_you_would_like_to_remove">Select any items you would like to remove.</string>
     <string name="review_daily_calories">Review Daily Calories</string>
     <string name="remove_favorites">Remove Favorites</string>
+    <string name="accept">Accept</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="manage_favorites">Manage Favorites</string>
 </resources>

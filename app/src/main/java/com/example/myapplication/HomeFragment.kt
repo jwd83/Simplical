@@ -50,7 +50,11 @@ class HomeFragment : Fragment() {
         }
 
         button_review_day.setOnClickListener {
-            findNavController().navigate((R.id.action_HomeFragment_to_DailyCalories))
+            findNavController().navigate(R.id.action_HomeFragment_to_DailyCalories)
+        }
+
+        button_manage_favorites.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_ManageFavorites)
         }
     }
 }
