@@ -236,6 +236,6 @@ object Info {
     fun addFavorite(name: String, calories: Double) {
         // todo prevent adding duplicate item name
         favoriteFoods.add(Food(0, name, calories))
-        favoriteFoods = favoriteFoods.sortedWith(compareBy{it.name}).toMutableList()
+        favoriteFoods = favoriteFoods.sortedWith(compareBy{ it.name.toUpperCase()}).toMutableList()
     }
 }

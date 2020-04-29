@@ -71,19 +71,30 @@
             android:layout_width="wrap_content"
             android:layout_height="30sp" />
 
-        <Button
-            android:id="@+id/button_enter_calories"
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/enter_calories"
-            />
+            >
 
-        <Button
-            android:id="@+id/button_enter_favorite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/enterFavorite"
-            />
+            <Button
+                android:id="@+id/button_enter_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_calories"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                />
+
+            <Button
+                android:id="@+id/button_enter_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enterFavorite"
+                android:layout_weight="1"
+                android:layout_gravity="right"
+                />
+
+        </TableRow>
 
         <Button
             android:id="@+id/button_home_update_weight"
@@ -117,7 +128,7 @@
             android:id="@+id/button_update_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/updateDetails"
+            android:text="@string/update_profile"
            />
 
         <Button
