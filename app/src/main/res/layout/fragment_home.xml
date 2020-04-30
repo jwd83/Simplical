@@ -97,22 +97,39 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_home_update_weight"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/weighIn" />
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/button_home_update_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/weighIn"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                />
+
+            <Button
+                android:id="@+id/button_review_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/review_daily_calories"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                />
+        </LinearLayout>
+
+
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="30sp" />
 
-        <Button
-            android:id="@+id/button_review_day"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/review_daily_calories"
-            />
+
 
         <Button
             android:id="@+id/button_manage_favorites"

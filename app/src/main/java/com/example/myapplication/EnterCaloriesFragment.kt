@@ -35,12 +35,12 @@ class EnterCaloriesFragment : Fragment() {
                 var source = text_source.text.toString().trim()
 
                 if (source == "") {
-                    source = "Unnamed"
+                    source = "Unlisted"
                 }
 
                 Info.dailyFoodsAdd(calories, quantity, source)
 
-                if(switch_save_to_favorites.isChecked) {
+                if(switch_save_to_favorites.isChecked && source != "Unlisted") {
                     Info.addFavorite(source, calories)
                 }
 

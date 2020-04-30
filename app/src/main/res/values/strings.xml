@@ -43,12 +43,12 @@
     <string name="enter_calories_title">Calorie Entry</string>
     <string name="enter_calories_each">Calories (each)</string>
     <string name="enter_calories_quantity">Quantity</string>
-    <string name="enter_calories_source">Calorie Source (optional)</string>
+    <string name="enter_calories_source">Description (optional)</string>
     <string name="enter_calories_hint_calories">140</string>
     <string name="enter_calories_hint_quantity">1</string>
     <string name="enter_calories_hint_source">Can of soda</string>
     <string name="enter_calories_button">Enter</string>
-    <string name="enter_calories_favorite_question">Save to favorites?</string>
+    <string name="enter_calories_favorite_question">Save to favorites? Requires a description</string>
 
     <!-- Update weight -->
     <string name="update_weight_title">Weigh In</string>
@@ -91,7 +91,7 @@
     <string name="remove">Remove</string>
     <string name="day_in_review">Day in Review</string>
     <string name="select_any_items_you_would_like_to_remove">Select any items you would like to remove.</string>
-    <string name="review_daily_calories">Review Daily Calories</string>
+    <string name="review_daily_calories">Review Your Day</string>
     <string name="remove_favorites">Remove Favorites</string>
     <string name="accept">Accept</string>
 

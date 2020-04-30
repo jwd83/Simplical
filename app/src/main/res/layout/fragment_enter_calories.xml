@@ -102,6 +102,7 @@
             android:id="@+id/switch_save_to_favorites"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/enter_calories_favorite_question" />
 
         <Space
