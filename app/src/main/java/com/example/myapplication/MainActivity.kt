@@ -19,11 +19,6 @@ class MainActivity : AppCompatActivity() {
         Info.load(this)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        if(Info.birthDate != Info.birthDateNotSet && savedInstanceState == null) {
-            val nc = findNavController(nav_host_fragment.id)
-            nc.popBackStack(R.id.FirstFragment, true)
-            nc.navigate(R.id.HomeFragment)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
