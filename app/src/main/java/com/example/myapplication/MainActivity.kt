@@ -15,22 +15,14 @@ import kotlinx.android.synthetic.main.content_main.*
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        if(savedInstanceState != null) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-            setSupportActionBar(toolbar)
-
-        } else {
-            super.onCreate(savedInstanceState)
-            Info.load(this)
-            setContentView(R.layout.activity_main)
-            setSupportActionBar(toolbar)
-
-            if(Info.birthDate != Info.birthDateNotSet) {
-                val nc = findNavController(nav_host_fragment.id)
-                nc.popBackStack(R.id.FirstFragment, true)
-                nc.navigate(R.id.HomeFragment)
-            }
+        super.onCreate(savedInstanceState)
+        Info.load(this)
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+        if(Info.birthDate != Info.birthDateNotSet && savedInstanceState == null) {
+            val nc = findNavController(nav_host_fragment.id)
+            nc.popBackStack(R.id.FirstFragment, true)
+            nc.navigate(R.id.HomeFragment)
         }
     }
 

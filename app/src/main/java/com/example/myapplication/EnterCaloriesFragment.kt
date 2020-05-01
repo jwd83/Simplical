@@ -24,7 +24,10 @@ class EnterCaloriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        redrawUI()
+    }
 
+    private fun redrawUI() {
         var success = false
 
         button_calorie_entry.setOnClickListener {
