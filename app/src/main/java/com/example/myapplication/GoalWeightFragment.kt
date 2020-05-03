@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,9 +44,23 @@ class GoalWeightFragment : Fragment() {
                 val newGoalWeight = edit_goal_weight_value.text.toString().toDouble()
                 if(newGoalWeight in 50.0..600.0) {
                     Info.goalWeight = newGoalWeight
-                    Info.save(requireActivity())
-                    success = true
-                    findNavController().popBackStack()
+
+                    // check if this is part of the onboard process
+
+                    if(Info.onboardComplete) {
+                        Info.save(requireActivity())
+                        success = true
+                        findNavController().popBackStack()
+                    } else {
+                        // wrap up the onboarding process and launch the main activity
+                        Info.onboardComplete = true
+                        Info.save(requireActivity())
+                        success = true
+                        val ac = requireActivity()
+                        val main = Intent(ac, MainActivity::class.java)
+                        startActivity(main)
+                        ac.finish()
+                    }
                 }
             } catch(e: Throwable) {
 

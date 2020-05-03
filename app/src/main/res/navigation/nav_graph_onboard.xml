@@ -22,13 +22,19 @@
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_MainFragment"
-            app:destination="@id/HomeFragment"
-            app:popUpTo="@+id/FirstFragment"
-            app:popUpToInclusive="true"
-
-            />
+            android:id="@+id/action_SecondFragment_to_UpdateGoalWeight"
+            app:destination="@id/UpdateGoalWeight" />
     </fragment>
+
+    <fragment
+        android:id="@+id/UpdateGoalWeight"
+        android:name="com.example.myapplication.GoalWeightFragment"
+        android:label="Onboard Goal Weight"
+        tools:layout="@layout/fragment_goal_weight"
+        >
+
+    </fragment>
+
 <!--    Add set goal weight -->
 <!--    <fragment-->
 <!--        android:id="@+id/GoalWeightFragment"-->

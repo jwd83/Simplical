@@ -34,6 +34,7 @@ object Info {
     private const val spKeyFavorites: String  = "FAVORITES"
     private const val spKeyDailyFoods: String = "DAILY_FOODS"
     private const val spKeyDailyFoodsDate: String ="DAILY_FOODS_DATE"
+    private const val spKeyOnboardComplete: String ="ONBOARD_COMPLETE"
 
     // Check not set
     const val birthDateNotSet = "NOT_SET"
@@ -53,6 +54,7 @@ object Info {
     var caloriesConsumed: Double = 0.0
     var goalWeight: Double = 0.0
     var dailyFoodsDate: String? = ""
+    var onboardComplete: Boolean = false
 
     // this will need to be computed from birth date
     var age: Double = 37.0
@@ -111,6 +113,7 @@ object Info {
         editPrefs.putString(spKeyFavorites, favoritesJSON)
         editPrefs.putString(spKeyDailyFoods, dailyJSON)
         editPrefs.putString(spKeyDailyFoodsDate, dailyFoodsDate)
+        editPrefs.putBoolean(spKeyOnboardComplete, onboardComplete)
         editPrefs.apply()
     }
 
@@ -132,6 +135,7 @@ object Info {
         caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
         goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
         dailyFoodsDate = prefs.getString(spKeyDailyFoodsDate, "")
+        onboardComplete = prefs.getBoolean(spKeyOnboardComplete, false)
 
         // load Json lists
         val favoritesJson = prefs.getString(spKeyFavorites, "")

@@ -84,7 +84,7 @@ class SecondFragment : Fragment() {
                     // store these values in shared preferences
                     Info.save(requireActivity())
 
-                    findNavController().navigate(R.id.action_SecondFragment_to_MainFragment)
+                    findNavController().navigate(R.id.action_SecondFragment_to_UpdateGoalWeight)
 
                     success = true
                 }
