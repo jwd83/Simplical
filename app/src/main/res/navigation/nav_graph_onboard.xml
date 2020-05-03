@@ -29,4 +29,8 @@
 
             />
     </fragment>
+<!--    Add set goal weight -->
+<!--    <fragment-->
+<!--        android:id="@+id/GoalWeightFragment"-->
+<!--        android:name=""-->
 </navigation>
