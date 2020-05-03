@@ -56,10 +56,10 @@ class HomeFragment : Fragment() {
         button_manage_favorites.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_ManageFavorites)
         }
-//
-//        button_reset_data.setOnClickListener {
-//
-//            finish()
-//        }
+
+        button_reset_data.setOnClickListener {
+            Info.reset(requireActivity())
+            requireActivity().finish()
+        }
     }
 }
