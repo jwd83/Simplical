@@ -99,4 +99,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="manage_favorites">Manage Favorites</string>
     <string name="update_profile">Update Profile</string>
+    <string name="debug_functions">Debug Functions</string>
+    <string name="reset_data">Reset Data</string>
 </resources>

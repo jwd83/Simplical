@@ -117,48 +117,55 @@
                 android:id="@+id/button_review_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/review_daily_calories"
                 android:layout_weight="1"
+                android:text="@string/review_daily_calories"
                 android:layout_gravity="left"
                 />
         </LinearLayout>
 
 
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="30sp" />
-
-
-
-        <Button
-            android:id="@+id/button_manage_favorites"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/manage_favorites"
-            />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="30sp" />
 
-        <Button
-            android:id="@+id/button_update_details"
+
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/update_profile"
-           />
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/button_manage_favorites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/manage_favorites"
+                android:layout_weight="1"
+                />
 
-        <Button
-            android:id="@+id/button_update_goal_weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/updateGoalWeight"
-             />
+            <Button
+                android:id="@+id/button_update_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_profile"
+                android:layout_weight="1"
+                />
 
-<!--        <Space-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="30sp" />-->
+            <Button
+                android:id="@+id/button_update_goal_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/updateGoalWeight"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="30sp" />
 
 <!--        <Button-->
 <!--            android:id="@+id/button_debug_message"-->
@@ -171,12 +178,18 @@
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="30sp" />-->
 
-<!--        <Button-->
-<!--            android:id="@+id/button_reset_data"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Reset Data"-->
-<!--            />-->
+        <TextView
+            android:id="@+id/textViewDebugging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/debug_functions" />
+
+        <Button
+            android:id="@+id/button_reset_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_data"
+            />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

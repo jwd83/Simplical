@@ -1,11 +1,15 @@
 package com.example.myapplication
 
 /***
- * 1. finish onboard activity
+ * - finish onboard activity
+ * - attach image to favorite
+ * - take picture with camera and save picture to filesystem
+ * = reimpliment reset button
  */
 
 object Todo {
     fun todo(): String {
         return "todo"
     }
+
 }
