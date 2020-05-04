@@ -123,15 +123,9 @@
                 />
         </LinearLayout>
 
-
-
-
         <Space
             android:layout_width="wrap_content"
             android:layout_height="30sp" />
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -184,12 +178,26 @@
             android:layout_height="wrap_content"
             android:text="@string/debug_functions" />
 
-        <Button
-            android:id="@+id/button_reset_data"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/reset_data"
-            />
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/button_reset_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reset_data"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/button_reset_onboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reset_onboarding"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

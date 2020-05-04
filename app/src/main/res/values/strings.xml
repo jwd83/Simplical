@@ -12,12 +12,12 @@
 
     <!-- Q&A / Settings-->
     <string name="previous">Previous</string>
-    <string name="acquainted">Getting to Know You</string>
+    <string name="acquainted">Your Profile</string>
     <string name="settingsTitle">Settings</string>
     <string name="questionPreface">Answer a few questions to start painting a picture of your health.</string>
     <string name="questionSex">Which sex are you?</string>
-    <string name="questionBirthDate">What is your date of birth?</string>
-    <string name="hintBirthDate">12/31/1995</string>
+    <string name="questionBirthDate">Your age?</string>
+    <string name="hintBirthDate">18+</string>
     <string name="sexMale">Male</string>
     <string name="sexFemale">Female</string>
     <string name="questionHeight">Your height in inches?</string>
@@ -101,4 +101,5 @@
     <string name="update_profile">Update Profile</string>
     <string name="debug_functions">Debug Functions</string>
     <string name="reset_data">Reset Data</string>
+    <string name="reset_onboarding">Reset Onboarding</string>
 </resources>

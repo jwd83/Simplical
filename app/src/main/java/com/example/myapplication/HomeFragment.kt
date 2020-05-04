@@ -61,5 +61,10 @@ class HomeFragment : Fragment() {
             Info.reset(requireActivity())
             requireActivity().finish()
         }
+        button_reset_onboard.setOnClickListener {
+            Info.onboardComplete = false
+            Info.save(requireActivity())
+            requireActivity().finish()
+        }
     }
 }
