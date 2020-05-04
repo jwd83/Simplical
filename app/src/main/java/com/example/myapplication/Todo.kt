@@ -10,6 +10,7 @@ package com.example.myapplication
  * - rewrite FirstFragment's layout xml as a linear vertical layout
  * - round values displayed to 1 decimal place around the app
  * - age vs birthdate
+ * - setup discord integration
  */
 
 object Todo {
