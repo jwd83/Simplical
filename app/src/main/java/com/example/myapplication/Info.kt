@@ -27,6 +27,7 @@ object Info {
     private const val spKeyActivityLevel: String  = "ACTIVITY_LEVEL"
     private const val spKeyMale: String  = "MALE"
     private const val spKeyBirthDate: String  = "BIRTH_DATE"
+    private const val spKeyAge: String  = "AGE"
     private const val spKeyRate: String  = "RATE"
     private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
     private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
@@ -44,20 +45,21 @@ object Info {
     var dailyFoods = mutableListOf<Food>()
 
     // working data
+    // todo look into computing age from birthdate
     var height: Double = 0.0
     var weight: Double = 0.0
     var activityLevel: Double = 0.0
     var male: Boolean = false
+    var age: Double = 0.0
     var birthDate: String? = ""
     var rate: Double = 0.0
     var caloriesConsumedDate: String? = ""
     var caloriesConsumed: Double = 0.0
     var goalWeight: Double = 0.0
     var dailyFoodsDate: String? = ""
-    var onboardComplete: Boolean = false
 
-    // this will need to be computed from birth date
-    var age: Double = 37.0
+    // check if we have completed the onboarding task
+    var onboardComplete: Boolean = false
 
 //      Todo see if this works/how it works
 //    lateinit var myAc: Activity
@@ -103,6 +105,7 @@ object Info {
         // save data
         editPrefs.putString(spKeyBirthDate, birthDate)
         editPrefs.putBoolean(spKeyMale, male)
+        editPrefs.putDouble(spKeyAge, age)
         editPrefs.putDouble(spKeyHeight, height)
         editPrefs.putDouble(spKeyWeight, weight)
         editPrefs.putDouble(spKeyActivityLevel, activityLevel)
@@ -125,6 +128,7 @@ object Info {
         val gson: Gson = Gson()
 
         // load basic data
+        age = prefs.getDouble(spKeyAge, 30.0)
         birthDate = prefs.getString(spKeyBirthDate, birthDateNotSet)
         male = prefs.getBoolean(spKeyMale, false)
         height = prefs.getDouble(spKeyHeight, 0.0)

@@ -53,8 +53,7 @@ class SecondFragment : Fragment() {
 
                 val weight = edit_weight.text.toString().toDouble()
                 val height = edit_height.text.toString().toDouble()
-                val birthDate = edit_birth.text.toString()
-                val age = 37.0
+                val age = edit_birth.text.toString().toDouble()
                 val rate = when(radio_rate.checkedRadioButtonId) {
                     R.id.rate_05 -> 0.5
                     R.id.rate_10 -> 1.0
@@ -71,7 +70,7 @@ class SecondFragment : Fragment() {
                     Info.age = age
                     Info.activityLevel = activityLevel
                     Info.rate = rate
-                    Info.birthDate = birthDate
+                    Info.birthDate = Info.birthDateNotSet
 
                     // solve bmi/bmr values
                     val bmi = Info.calculateBMI()
