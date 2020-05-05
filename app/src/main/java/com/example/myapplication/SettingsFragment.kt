@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_settings.*
+import java.text.DecimalFormat
 
 class SettingsFragment : Fragment() {
 
@@ -26,6 +28,38 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(Info.onboardComplete) {
+
+            val df: DecimalFormat = DecimalFormat("#.#")
+
+
+            // load sex
+            if (Info.male) {
+                settings_radio_male.isChecked = true
+            } else {
+                settings_radio_female.isChecked = true
+            }
+
+            // load height, weight and age
+            settings_edit_height.setText(df.format(Info.height))
+            settings_edit_weight.setText(df.format(Info.weight))
+            settings_edit_birth.setText(df.format(Info.age))
+
+            // load activity level
+            // todo
+            // look at doing a when statement here. comparing double is generally a no-no but they
+            // should never be modified once set. may consider storing the string and evaluating
+            // it to a double on load
+            if (Info.activityLevel == 1.1) settings_radio_al_110.isChecked = true
+            if (Info.activityLevel == 1.2) settings_radio_al_120 .isChecked = true
+            if (Info.activityLevel == 1.37) settings_radio_al_137.isChecked = true
+            if (Info.activityLevel == 1.55) settings_radio_al_155.isChecked = true
+            if (Info.activityLevel == 1.725) settings_radio_al_1725.isChecked = true
+            if (Info.activityLevel == 1.9) settings_radio_al_190.isChecked = true
+        }
+
+
 
         settings_button_looks_good.setOnClickListener {
 
@@ -69,18 +103,15 @@ class SettingsFragment : Fragment() {
                     Info.rate = rate
                     Info.birthDate = Info.birthDateNotSet
 
-                    // solve bmi/bmr values
-                    val bmi = Info.calculateBMI()
-                    val bmr = Info.calculateBMR()
-                    val tdee = Info.calculateTDEE()
-
                     // generate a toast message
-                    toast(("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee))
-//                    Toast.makeText(
-//                        context,
-//                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename).format(bmi, bmr, tdee),
-//                        Toast.LENGTH_LONG
-//                    ).show()
+                    toast(
+                        ("BMI = %.2f\nBMR = %.1f\nTDEE = %.1f\nspFile = " + Info.spFilename)
+                            .format(
+                                Info.calculateBMI(),
+                                Info.calculateBMR(),
+                                Info.calculateTDEE()
+                            )
+                    )
 
                     // store these values in shared preferences
                     Info.save(requireActivity())
