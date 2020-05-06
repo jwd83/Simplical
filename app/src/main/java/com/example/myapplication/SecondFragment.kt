@@ -55,6 +55,7 @@ class SecondFragment : Fragment() {
                 val height = edit_height.text.toString().toDouble()
                 val age = edit_birth.text.toString().toDouble()
                 val rate = when(radio_rate.checkedRadioButtonId) {
+                    R.id.rate_00 -> 0.0
                     R.id.rate_05 -> 0.5
                     R.id.rate_10 -> 1.0
                     R.id.rate_15 -> 1.5

@@ -86,6 +86,7 @@ class SettingsFragment : Fragment() {
                 val height = settings_edit_height.text.toString().toDouble()
                 val age = settings_edit_birth.text.toString().toDouble()
                 val rate = when(settings_radio_rate.checkedRadioButtonId) {
+                    R.id.settings_rate_00 -> 0.0
                     R.id.settings_rate_05 -> 0.5
                     R.id.settings_rate_10 -> 1.0
                     R.id.settings_rate_15 -> 1.5
