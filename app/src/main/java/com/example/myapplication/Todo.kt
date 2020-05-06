@@ -7,6 +7,7 @@ package com.example.myapplication
  * rewrite FirstFragment's layout xml as a linear vertical layout
  * add debug button to clear oboard complete flag
  * age vs birthdate storage
+ * fix maintain option
  *
  * todo
  * attach image to favorite
@@ -14,6 +15,7 @@ package com.example.myapplication
  * round values displayed to 1 decimal place around the app
  * age calculations re-added
  * merge settings and second fragment into a single reusable fragment
+ * show more data on review your day
 */
 
 object Todo {

@@ -102,4 +102,7 @@
     <string name="debug_functions">Debug Functions</string>
     <string name="reset_data">Reset Data</string>
     <string name="reset_onboarding">Reset Onboarding</string>
+    <string name="day_in_review_age">Age</string>
+    <string name="_0">0</string>
+    <string name="day_in_review_sex">Sex</string>
 </resources>

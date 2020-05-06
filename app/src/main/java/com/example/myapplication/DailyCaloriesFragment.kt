@@ -12,6 +12,7 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_daily_calories.*
+import java.text.DecimalFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -27,6 +28,9 @@ class DailyCaloriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val df0: DecimalFormat = DecimalFormat("#,###")
+        val df1: DecimalFormat = DecimalFormat  ("#.#")
+        val df3: DecimalFormat = DecimalFormat("#.###")
 
         val verticalList = daily_review_vertical_list
 
@@ -41,6 +45,17 @@ class DailyCaloriesFragment : Fragment() {
         addText("Calorie Budget:    %.1f".format(Info.calculateDailyCalories()), 30)
         addText("Calories Used:    %.1f".format(Info.dailyFoodsConsumedCalories()))
         addText("Calories Left:    %.1f".format(Info.dailyFoodsAvailableCalories()))
+
+        day_in_review_value_sex.text = if(Info.male) { "Male" } else { "Female" }
+        day_in_review_value_age.text = df0.format(Info.age)
+        day_in_review_value_bmi.text = df1.format(Info.calculateBMI())
+        day_in_review_value_bmr.text = df0.format(Info.calculateBMR())
+        day_in_review_value_height.text = df1.format(Info.height)
+        day_in_review_value_weight.text = df1.format(Info.weight)
+        day_in_review_value_alm.text = df3.format(Info.activityLevel)
+        day_in_review_value_tdee.text = df0.format(Info.calculateTDEE())
+        day_in_review_value_weekly_burn.text = df1.format(Info.calculateTDEE() * 7.0)
+
 
         button_remove_from_day.setOnClickListener {
             try {

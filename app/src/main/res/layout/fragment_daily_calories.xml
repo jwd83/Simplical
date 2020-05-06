@@ -8,14 +8,12 @@
     android:paddingLeft="16sp"
     android:paddingRight="16sp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:autofillHints=""
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:background="@color/screenBackground"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,38 +23,333 @@
             android:textColor="@color/colorFontDefault"
             android:id="@+id/text_daily_review"
             android:text="@string/day_in_review" />
-
         <Space
             android:layout_width="wrap_content"
             android:layout_height="20sp" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/select_any_items_you_would_like_to_remove" />
-
         <Space
             android:layout_width="wrap_content"
             android:layout_height="20sp" />
-
+        <!-- populate this linear view with items to remove -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:background="@color/screenBackground"
             android:orientation="vertical"
-            android:id="@+id/daily_review_vertical_list" >
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
+            android:id="@+id/daily_review_vertical_list"
+            />
         <Space
             android:layout_width="wrap_content"
             android:layout_height="20sp" />
-
         <Button
             android:id="@+id/button_remove_from_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/accept"
             android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculating Your Calorie Budget"
+            android:textSize="20sp"
+            android:textColor="@color/colorFontDefault"
+            android:layout_gravity="center"
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            android:textSize="20sp"
+            android:textColor="@color/colorFontDefault"
+            android:layout_gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/day_in_review_sex"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/day_in_review_age"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Height"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weight"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Depth"
+            android:textSize="20sp"
+            android:textColor="@color/colorFontDefault"
+            android:layout_gravity="center"
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BMI (Body Mass Index)"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your body mass index is determined by taking your weight in kilograms divided by the square of your height in meters. A healthy BMI is typically considered to be in the range of 18.5 to 25.0."
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BMR (Basal Metabolic Rate)"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_bmr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basal Metabolic Rate is the number of calories required to keep your body functioning at rest. We expect your body will burn this many calories on it's own without any exercise."
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ALM (Activity Level Modifier)"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_alm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TDEE (Total Daily Energy Expenditure)"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_tdee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Total Daily Energy Expenditure (TDEE) is an
+estimation of how many calories you burn per day when exercise is
+taken into account. To derive this number simply take your Basal Metabolic Rate (BMR) and
+multiply it by an Activity Level Modifier (ALM) that corresponds most closely
+to your daily activity level. These activity level modifiers typically
+range from 1.2 for mostly sedentary people to 1.95 for those dedicated to daily strenuous exercise."
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekly Burn Rate"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_weekly_burn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your weekly burn rate is the amount of calories we can expect your body to use in a given week given your TDEE. Typically a pound of this calorie fuel your body uses consists of about 3,500 calories. To lose a pound in a week on average simply consume 3,500 less calories than this number on average. By the same token you could gain a pound a week by increasing your weekly calorie intake roughly 3,500 calories above it."
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>
