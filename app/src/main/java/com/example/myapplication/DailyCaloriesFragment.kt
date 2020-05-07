@@ -61,6 +61,14 @@ class DailyCaloriesFragment : Fragment() {
         day_in_review_value_weekly_adjustment.text = df0.format(Info.caloriesPerPound * Info.rate)
         // todo add the weekly target value
 
+        var weekly_cals = Info.calculateTDEE() * 7.0
+        if (Info.weight > Info.goalWeight) {
+            weekly_cals -= Info.rate * Info.caloriesPerPound
+        } else {
+            weekly_cals += Info.rate * Info.caloriesPerPound
+        }
+        day_in_review_value_weekly_supply.text = df0.format(weekly_cals)
+
 
         button_remove_from_day.setOnClickListener {
             try {

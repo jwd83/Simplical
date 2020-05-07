@@ -91,7 +91,11 @@ object Info {
     }
 
     fun calculateDailyCalories(): Double {
-        return (calculateTDEE() * 7.0 - rate * 3500.0) / 7.0
+        return if (weight > goalWeight) {
+            (calculateTDEE() * 7.0 - rate * 3500.0) / 7.0
+        } else {
+            (calculateTDEE() * 7.0 + rate * 3500.0) / 7.0
+        }
     }
 
     fun save(activity: Activity) {
