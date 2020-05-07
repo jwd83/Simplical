@@ -58,6 +58,9 @@ object Info {
     var goalWeight: Double = 0.0
     var dailyFoodsDate: String? = ""
 
+    // constant formula values
+    val caloriesPerPound: Double = 3500.0
+
     // check if we have completed the onboarding task
     var onboardComplete: Boolean = false
 

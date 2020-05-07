@@ -328,7 +328,7 @@ range from 1.2 for mostly sedentary people to 1.95 for those dedicated to daily 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Weekly Burn Rate"
+                android:text="Weekly Calorie Burn Rate"
                 android:textColor="@color/colorFontDefault"
                 android:textSize="@dimen/font_size_daily_stat_descriptions"
 
@@ -346,10 +346,160 @@ range from 1.2 for mostly sedentary people to 1.95 for those dedicated to daily 
 
                 />
         </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Your weekly burn rate is the amount of calories we can expect your body to use in a given week given your TDEE. Typically a pound of this calorie fuel your body uses consists of about 3,500 calories. To lose a pound in a week on average simply consume 3,500 less calories than this number on average. By the same token you could gain a pound a week by increasing your weekly calorie intake roughly 3,500 calories above it."
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pace"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_weekly_pace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekly Calorie Adjustment"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_weekly_adjustment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekly Calorie Supply Rate"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_weekly_supply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your selected weight adjustment pace is reflected here in pounds per week. Beneath this is calorie offset to achieve this pace at 3,500 calories per pound and your weekly supply rate to make this adjustment."
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Calorie Budget"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_daily_goal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Daily Energy Expenditure"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stat_descriptions"
+
+                />
+            <TextView
+                android:id="@+id/day_in_review_value_goal_tdee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:layout_gravity="end"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorFontDefault"
+                android:textSize="@dimen/font_size_daily_stats"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="By aiming to consume somewhere between your daily calorie goal and your total daily energy expenditure you should be able to influence your weight near your desired pace."
             />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

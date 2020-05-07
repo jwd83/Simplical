@@ -54,7 +54,12 @@ class DailyCaloriesFragment : Fragment() {
         day_in_review_value_weight.text = df1.format(Info.weight)
         day_in_review_value_alm.text = df3.format(Info.activityLevel)
         day_in_review_value_tdee.text = df0.format(Info.calculateTDEE())
+        day_in_review_value_goal_tdee.text = df0.format(Info.calculateTDEE())
         day_in_review_value_weekly_burn.text = df0.format(Info.calculateTDEE() * 7.0)
+        day_in_review_value_daily_goal.text = df0.format(Info.calculateDailyCalories())
+        day_in_review_value_weekly_pace.text = df1.format(Info.rate)
+        day_in_review_value_weekly_adjustment.text = df0.format(Info.caloriesPerPound * Info.rate)
+        // todo add the weekly target value
 
 
         button_remove_from_day.setOnClickListener {
