@@ -54,7 +54,7 @@ class DailyCaloriesFragment : Fragment() {
         day_in_review_value_weight.text = df1.format(Info.weight)
         day_in_review_value_alm.text = df3.format(Info.activityLevel)
         day_in_review_value_tdee.text = df0.format(Info.calculateTDEE())
-        day_in_review_value_weekly_burn.text = df1.format(Info.calculateTDEE() * 7.0)
+        day_in_review_value_weekly_burn.text = df0.format(Info.calculateTDEE() * 7.0)
 
 
         button_remove_from_day.setOnClickListener {
