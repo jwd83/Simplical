@@ -30,15 +30,20 @@ class DailyCaloriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val df0: DecimalFormat = DecimalFormat("#,###")
         val df1: DecimalFormat = DecimalFormat  ("#.#")
+        val df2: DecimalFormat = DecimalFormat  ("#.##")
         val df3: DecimalFormat = DecimalFormat("#.###")
 
         val verticalList = daily_review_vertical_list
 
+        var entries = 1;
+
         Info.dailyFoods.forEach{
             val foodSwitch = Switch(requireActivity())
-            foodSwitch.text = "${it.name}: ${it.qty} * ${it.calories} = ${it.qty * it.calories}"
+//            foodSwitch.text = "${entries}. \"${it.name}\" at ${df2.format(it.calories)} CPP and ${df2.format(it.qty)} portions = ${df2.format(it.qty * it.calories)} total calories."
+            foodSwitch.text = "${df2.format(it.qty)} of \"${it.name}\": ${df2.format(it.calories)}cal/each = ${df2.format(it.qty * it.calories)}cal/tot"
             foodSwitch.id = View.generateViewId()
             it.id = foodSwitch.id
+            entries++
             verticalList.addView(foodSwitch)
         }
 

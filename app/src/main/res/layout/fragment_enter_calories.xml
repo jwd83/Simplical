@@ -30,6 +30,30 @@
             android:layout_height="30sp" />
 
         <TextView
+            android:id="@+id/enter_calorie_source_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/enter_calories_source"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorFontDefault" />
+
+
+        <EditText
+            android:id="@+id/text_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/enter_calories_hint_source"
+            android:text="" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30sp" />
+
+        <TextView
             android:id="@+id/enter_calorie_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,30 +98,6 @@
             android:layout_width="match_parent"
             android:layout_height="30sp" />
 
-        <TextView
-            android:id="@+id/enter_calorie_source_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/enter_calories_source"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorFontDefault" />
-
-
-        <EditText
-            android:id="@+id/text_source"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/enter_calories_hint_source"
-            android:text="" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30sp" />
-
         <Switch
             android:id="@+id/switch_save_to_favorites"
             android:layout_width="match_parent"
@@ -115,6 +115,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/enter_calories_button" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="200sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

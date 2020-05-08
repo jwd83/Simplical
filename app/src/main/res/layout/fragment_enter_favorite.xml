@@ -16,28 +16,8 @@
         android:background="@color/screenBackground"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorFontDefault"
-            android:id="@+id/text_select_favorite"
-            android:text="@string/select_favorite" />
-
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="20sp" />
-
-        <RadioGroup
-            android:id="@+id/radio_group_favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </RadioGroup>
-
-        <Space
-            android:layout_width="match_parent"
             android:layout_height="20sp" />
 
         <TextView
@@ -67,11 +47,35 @@
             android:layout_width="match_parent"
             android:layout_height="20sp" />
 
+        <TextView
+            android:id="@+id/text_select_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/select_favorite"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/colorFontDefault" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20sp" />
+
         <Button
             android:id="@+id/button_choose_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/choose_favorite"
             android:layout_gravity="center_horizontal"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="200sp" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

@@ -44,9 +44,9 @@
     <string name="enter_calories_each">Calories (each)</string>
     <string name="enter_calories_quantity">Quantity</string>
     <string name="enter_calories_source">Description (optional)</string>
-    <string name="enter_calories_hint_calories">140</string>
+    <string name="enter_calories_hint_calories">310</string>
     <string name="enter_calories_hint_quantity">1</string>
-    <string name="enter_calories_hint_source">Can of soda</string>
+    <string name="enter_calories_hint_source">Pizza, large slice of pepperoni</string>
     <string name="enter_calories_button">Enter</string>
     <string name="enter_calories_favorite_question">Save to favorites? Requires a description</string>
 
