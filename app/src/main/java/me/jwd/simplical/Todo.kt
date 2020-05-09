@@ -20,6 +20,8 @@ package me.jwd.simplical
  * historical data in sqlite or filesystem objects
  * meal projections based on time of day and available calories
  * move quantity before selection for favorite
+ * create icon for google play
+ * disclaimer
  */
 
 object Todo {
