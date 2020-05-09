@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.example.myapplication.HomeFragment"
+        android:name="me.jwd.simplical.HomeFragment"
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home"
         >
@@ -41,44 +41,44 @@
 
     <fragment
         android:id="@+id/SettingsFragment"
-        android:name="com.example.myapplication.SettingsFragment"
+        android:name="me.jwd.simplical.SettingsFragment"
         android:label="@string/settings_fragment_label"
         tools:layout="@layout/fragment_settings"
         >
     </fragment>
     <fragment
         android:id="@+id/EnterCaloriesFragment"
-        android:name="com.example.myapplication.EnterCaloriesFragment"
+        android:name="me.jwd.simplical.EnterCaloriesFragment"
         android:label="@string/settings_fragment_enter_calories"
         tools:layout="@layout/fragment_enter_calories"
         />
     <fragment
         android:id="@+id/UpdateWeightFragment"
-        android:name="com.example.myapplication.UpdateWeightFragment"
+        android:name="me.jwd.simplical.UpdateWeightFragment"
         android:label="@string/update_weight_title"
         tools:layout="@layout/fragment_update_weight"
         />
     <fragment
         android:id="@+id/UpdateGoalWeight"
-        android:name="com.example.myapplication.GoalWeightFragment"
+        android:name="me.jwd.simplical.GoalWeightFragment"
         android:label="Update Goal Weight"
         tools:layout="@layout/fragment_goal_weight"
         />
     <fragment
         android:id="@+id/EnterFavorite"
-        android:name="com.example.myapplication.EnterFavoriteFragment"
+        android:name="me.jwd.simplical.EnterFavoriteFragment"
         android:label="Enter Favorite"
         tools:layout="@layout/fragment_enter_favorite"
         />
     <fragment
         android:id="@+id/DailyCalories"
-        android:name="com.example.myapplication.DailyCaloriesFragment"
+        android:name="me.jwd.simplical.DailyCaloriesFragment"
         label="Day in Review"
         tools:layout="@layout/fragment_daily_calories"
         />
     <fragment
         android:id="@+id/ManageFavorites"
-        android:name="com.example.myapplication.ManageFavoritesFragment"
+        android:name="me.jwd.simplical.ManageFavoritesFragment"
         label="Manage Favorites"
         tools:layout="@layout/fragment_manage_favorites"
     />
