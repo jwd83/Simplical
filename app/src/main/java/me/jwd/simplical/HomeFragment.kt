@@ -21,7 +21,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text_calories_remaining.text = "%.0f".format(Info.dailyFoodsAvailableCalories())
+
+        var cal1 = 0.0
+        var cal2 = 0.0
+
+        if(Info.dailyFoodsAvailableCalories() < Info.calculateTDEEAvailableDailyCalories()){
+            cal1 = Info.dailyFoodsAvailableCalories()
+            cal2 = Info.calculateTDEEAvailableDailyCalories()
+        } else {
+            cal1 = Info.calculateTDEEAvailableDailyCalories()
+            cal2 = Info.dailyFoodsAvailableCalories()
+        }
+
+        text_calories_remaining.text = "%.0f - %.0f".format(cal1, cal2)
         text_current_weight.text = "%.1f".format(Info.weight)
         text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
             "%.1f".format(Info.goalWeight - Info.weight)

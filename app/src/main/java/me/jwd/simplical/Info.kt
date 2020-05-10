@@ -90,6 +90,10 @@ object Info {
         return calculateBMR() * activityLevel
     }
 
+    fun calculateTDEEAvailableDailyCalories(): Double {
+        return calculateBMR() * activityLevel - dailyFoodsConsumedCalories()
+    }
+
     fun calculateDailyCalories(): Double {
         return if (weight > goalWeight) {
             (calculateTDEE() * 7.0 - rate * 3500.0) / 7.0
