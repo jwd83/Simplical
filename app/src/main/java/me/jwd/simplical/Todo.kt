@@ -22,6 +22,7 @@ package me.jwd.simplical
  * move quantity before selection for favorite
  * create icon for google play
  * disclaimer
+ * make calorie range toggle to show only loss/gain or both tdee and loss/gain
  */
 
 object Todo {
