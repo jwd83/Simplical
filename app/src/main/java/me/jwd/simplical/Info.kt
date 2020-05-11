@@ -29,8 +29,8 @@ object Info {
     private const val spKeyBirthDate: String  = "BIRTH_DATE"
     private const val spKeyAge: String  = "AGE"
     private const val spKeyRate: String  = "RATE"
-    private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
-    private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
+//    private const val spKeyCaloriesConsumedDate: String  = "CALORIES_CONSUMED_DATE"
+//    private const val spKeyCaloriesConsumed: String  = "CALORIES_CONSUMED"
     private const val spKeyGoalWeight: String  = "GOAL_WEIGHT"
     private const val spKeyFavorites: String  = "FAVORITES"
     private const val spKeyDailyFoods: String = "DAILY_FOODS"
@@ -53,8 +53,8 @@ object Info {
     var age: Double = 0.0
     var birthDate: String? = ""
     var rate: Double = 0.0
-    var caloriesConsumedDate: String? = ""
-    var caloriesConsumed: Double = 0.0
+//    var caloriesConsumedDate: String? = ""
+//    var caloriesConsumed: Double = 0.0
     var goalWeight: Double = 0.0
     var dailyFoodsDate: String? = ""
 
@@ -121,8 +121,8 @@ object Info {
         editPrefs.putDouble(spKeyWeight, weight)
         editPrefs.putDouble(spKeyActivityLevel, activityLevel)
         editPrefs.putDouble(spKeyRate, rate)
-        editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
-        editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
+//        editPrefs.putDouble(spKeyCaloriesConsumed, caloriesConsumed)
+//        editPrefs.putString(spKeyCaloriesConsumedDate, caloriesConsumedDate)
         editPrefs.putDouble(spKeyGoalWeight, goalWeight)
         editPrefs.putString(spKeyFavorites, favoritesJSON)
         editPrefs.putString(spKeyDailyFoods, dailyJSON)
@@ -146,8 +146,8 @@ object Info {
         weight = prefs.getDouble(spKeyWeight, 0.0)
         activityLevel = prefs.getDouble(spKeyActivityLevel, 0.0)
         rate = prefs.getDouble(spKeyRate, 0.0)
-        caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
-        caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
+//        caloriesConsumed = prefs.getDouble(spKeyCaloriesConsumed, 0.0)
+//        caloriesConsumedDate = prefs.getString(spKeyCaloriesConsumedDate, "")
         goalWeight = prefs.getDouble(spKeyGoalWeight, 0.0)
         dailyFoodsDate = prefs.getString(spKeyDailyFoodsDate, "")
         onboardComplete = prefs.getBoolean(spKeyOnboardComplete, false)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_enter_calories.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
             cal2 = Info.dailyFoodsAvailableCalories()
         }
 
+        text_calories_consumed.text = "%.0f".format(Info.dailyFoodsConsumedCalories())
         text_calories_remaining.text = "%.0f - %.0f".format(cal1, cal2)
         text_current_weight.text = "%.1f".format(Info.weight)
         text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {

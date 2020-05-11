@@ -10,6 +10,8 @@ package me.jwd.simplical
  * fix maintain option
  * show more data on review your day
  * make day in review more clear
+ * removed CALORIES_CONSUMED_DATE & CALORIES_CONSUMED keys
+ * add calories consumed per day to home screen
  *
  * todo
  * attach image to favorite

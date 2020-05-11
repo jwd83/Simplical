@@ -105,4 +105,5 @@
     <string name="day_in_review_age">Age</string>
     <string name="_0">0</string>
     <string name="day_in_review_sex">Sex</string>
+    <string name="calories_consumed_today">Calories Consumed Today</string>
 </resources>
