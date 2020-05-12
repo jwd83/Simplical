@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_enter_calories.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.util.*
+import kotlin.concurrent.scheduleAtFixedRate
 
 class HomeFragment : Fragment() {
+
+    var myTimer: Timer = Timer("redraw", false)
+    var cal: Calendar = Calendar.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,28 +23,20 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onDestroyView() {
+        myTimer.cancel()
+        super.onDestroyView()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // draw the ui and then setup a periodic redraw
+        redrawUI()
 
-        var cal1 = 0.0
-        var cal2 = 0.0
-
-        if(Info.dailyFoodsAvailableCalories() < Info.calculateTDEEAvailableDailyCalories()){
-            cal1 = Info.dailyFoodsAvailableCalories()
-            cal2 = Info.calculateTDEEAvailableDailyCalories()
-        } else {
-            cal1 = Info.calculateTDEEAvailableDailyCalories()
-            cal2 = Info.dailyFoodsAvailableCalories()
-        }
-
-        text_calories_consumed.text = "%.0f".format(Info.dailyFoodsConsumedCalories())
-        text_calories_remaining.text = "%.0f - %.0f".format(cal1, cal2)
-        text_current_weight.text = "%.1f".format(Info.weight)
-        text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
-            "%.1f".format(Info.goalWeight - Info.weight)
-        } else {
-            "+%.1f".format(Info.goalWeight - Info.weight)
+        // setup periodic redraw
+        myTimer.scheduleAtFixedRate(1000, 1000) {
+            redrawUI()
         }
 
         button_update_details.setOnClickListener{
@@ -75,10 +71,34 @@ class HomeFragment : Fragment() {
             Info.reset(requireActivity())
             requireActivity().finish()
         }
+
         button_reset_onboard.setOnClickListener {
             Info.onboardComplete = false
             Info.save(requireActivity())
             requireActivity().finish()
+        }
+    }
+
+    private fun redrawUI() {
+
+        var cal1: Double
+        var cal2: Double
+
+        if(Info.dailyFoodsAvailableCalories() < Info.calculateTDEEAvailableDailyCalories()){
+            cal1 = Info.dailyFoodsAvailableCalories()
+            cal2 = Info.calculateTDEEAvailableDailyCalories()
+        } else {
+            cal1 = Info.calculateTDEEAvailableDailyCalories()
+            cal2 = Info.dailyFoodsAvailableCalories()
+        }
+
+        text_calories_consumed.text = "%.0f".format(Info.dailyFoodsConsumedCalories())
+        text_calories_remaining.text = "%.0f - %.0f".format(cal1, cal2)
+        text_current_weight.text = "%.1f".format(Info.weight)
+        text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
+            "%.1f".format(Info.goalWeight - Info.weight)
+        } else {
+            "+%.1f".format(Info.goalWeight - Info.weight)
         }
     }
 }
