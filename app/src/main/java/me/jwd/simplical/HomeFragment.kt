@@ -12,7 +12,6 @@ import kotlin.concurrent.scheduleAtFixedRate
 
 class HomeFragment : Fragment() {
 
-    var myTimer: Timer = Timer("redraw", false)
     var cal: Calendar = Calendar.getInstance()
 
     override fun onCreateView(
@@ -24,7 +23,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        myTimer.cancel()
         super.onDestroyView()
     }
 
@@ -33,11 +31,6 @@ class HomeFragment : Fragment() {
 
         // draw the ui and then setup a periodic redraw
         redrawUI()
-
-        // setup periodic redraw
-        myTimer.scheduleAtFixedRate(1000, 1000) {
-            redrawUI()
-        }
 
         button_update_details.setOnClickListener{
             findNavController().navigate(R.id.action_HomeFragment_to_SettingsFragment)
