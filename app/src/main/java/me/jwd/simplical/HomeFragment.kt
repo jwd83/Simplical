@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
-import kotlin.concurrent.scheduleAtFixedRate
 
 class HomeFragment : Fragment() {
 
