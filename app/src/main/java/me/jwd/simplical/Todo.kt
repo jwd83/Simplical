@@ -3,7 +3,7 @@ package me.jwd.simplical
 /***
  * todo possibly finished
  * finish onboard activity
- * setup discord integration
+ * setup discord integration with github
  * rewrite FirstFragment's layout xml as a linear vertical layout
  * add debug button to clear onboard complete flag
  * age vs birth date storage
