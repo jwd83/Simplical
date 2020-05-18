@@ -15,6 +15,7 @@ package me.jwd.simplical
  * periodic redraw on home fragment
  *
  * todo
+ * look futher into scheduling reminder system/calendar functionality
  * attach image to favorite
  * take picture with camera and save picture to filesystem
  * round values displayed to 1 decimal place around the app
