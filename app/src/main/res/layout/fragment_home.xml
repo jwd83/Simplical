@@ -50,8 +50,10 @@
             android:textAlignment="center"
             android:gravity="center_horizontal" />
 
+
+
         <TextView
-            android:id="@+id/text_current_weight"
+            android:id="@+id/text_weekly_pace_at_goal_or_consumed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
@@ -60,29 +62,77 @@
             android:gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/text_current_weight_label"
+            android:id="@+id/text_weekly_pace_at_goal_or_consumed_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/currentWeight"
+            android:text="Weekly Pace at Remaining/Consumed Today"
             android:textAlignment="center"
             android:gravity="center_horizontal" />
 
-        <TextView
-            android:id="@+id/text_goal_weight_left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="70sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
 
-        <TextView
-            android:id="@+id/text_goal_weight_left_label"
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/weightRemaining"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/text_current_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="70sp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+
+                android:gravity="center_horizontal" />
+
+
+            <TextView
+                android:id="@+id/text_goal_weight_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="70sp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/text_current_weight_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentWeight"
+                android:textAlignment="center"
+                android:layout_weight="1"
+
+                android:gravity="center_horizontal" />
+
+
+            <TextView
+                android:id="@+id/text_goal_weight_left_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/weightRemaining"
+                android:textAlignment="center"
+                android:layout_weight="1"
+
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
 
         <Space
             android:layout_width="wrap_content"

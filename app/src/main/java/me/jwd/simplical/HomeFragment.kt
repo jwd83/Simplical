@@ -69,8 +69,12 @@ class HomeFragment : Fragment() {
 
     private fun redrawUI() {
 
+        /**
+         * calculate our values
+         */
         var cal1: Double
         var cal2: Double
+        val pace: Double = ((Info.dailyFoodsConsumedCalories() * 7.0) - (Info.calculateTDEEAvailableDailyCalories() * 7.0)) / 3500.0
 
         if(Info.dailyFoodsAvailableCalories() < Info.calculateTDEEAvailableDailyCalories()){
             cal1 = Info.dailyFoodsAvailableCalories()
@@ -80,13 +84,27 @@ class HomeFragment : Fragment() {
             cal2 = Info.dailyFoodsAvailableCalories()
         }
 
+
+        /**
+         * draw the easy stuff
+         */
         text_calories_consumed.text = "%.0f".format(Info.dailyFoodsConsumedCalories())
         text_calories_remaining.text = "%.0f - %.0f".format(cal1, cal2)
         text_current_weight.text = "%.1f".format(Info.weight)
+
+        /**
+         * draw weight loss
+         */
         text_goal_weight_left.text = if(Info.weight > Info.goalWeight) {
             "%.1f".format(Info.goalWeight - Info.weight)
         } else {
             "+%.1f".format(Info.goalWeight - Info.weight)
+        }
+
+        text_weekly_pace_at_goal_or_consumed.text = if(pace > 0) {
+            "+%.1f".format(pace)
+        } else {
+            "%.1f".format(pace)
         }
     }
 }
