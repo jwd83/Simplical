@@ -74,7 +74,7 @@ class HomeFragment : Fragment() {
          */
         var cal1: Double
         var cal2: Double
-        val pace: Double = ((Info.dailyFoodsConsumedCalories() * 7.0) - (Info.calculateTDEEAvailableDailyCalories() * 7.0)) / 3500.0
+        val pace: Double = ((Info.dailyFoodsConsumedCalories() * 7.0) - (Info.calculateTDEE() * 7.0)) / 3500.0
 
         if(Info.dailyFoodsAvailableCalories() < Info.calculateTDEEAvailableDailyCalories()){
             cal1 = Info.dailyFoodsAvailableCalories()
