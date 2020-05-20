@@ -3,6 +3,14 @@ package me.jwd.simplical
 /***
 
  * todo
+ *
+ * historical
+ *
+ * store a key value total calories and weigh in.
+ * make this modifiable and vieable in the UI
+ *
+ *
+ *
  * add a weekly pace at daily pace goal or current cal and show lesser of two. i.e. 2.0 lb/week or 1.8 when dipping below your goal
  * look futher into scheduling reminder system/calendar functionality
  * attach image to favorite
