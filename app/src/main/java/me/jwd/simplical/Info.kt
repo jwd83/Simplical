@@ -224,6 +224,8 @@ object Info {
             // when the date changes we should save the information out to a key value pair
             // where the ISO date is the key and the value contains GSON or serialized data
             // of the day referenced by the ISO date based key.
+
+            // could save to a flat file named ISO date, SQLite table?
             dailyFoodsDate = today
             dailyFoods = mutableListOf<Food>()
         }
